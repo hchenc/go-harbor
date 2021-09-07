@@ -15,14 +15,14 @@ import (
     "fmt"
     harbor2 "github.com/hchenc/go-harbor"
 )
-
-config := harbor2.NewConfiguration("your harbor basePath")
-client = harbor2.NewAPIClient(config)
-
 ctx := context.WithValue(context.Background(), ContextBasicAuth, BasicAuth{
-  UserName: "your username",
-  Password: "your password",
+    UserName: "your username",
+    Password: "your password",
 })
+config := NewConfigurationWithContext("your harbor basePath", ctx)
+
+client := NewAPIClient(config)
+
 projects, resp, err := client.ProjectApi.ListProjects(ctx, &ProjectApiListProjectsOpts{})
 defer resp.Body.Close()
 fmt.Println(projects, resp, err)
