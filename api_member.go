@@ -46,7 +46,7 @@ type MemberApiCreateProjectMemberOpts struct {
 	ProjectMember optional.Interface
 }
 
-func (a *MemberApiService) CreateProjectMember(ctx context.Context, projectNameOrId string, localVarOptionals *MemberApiCreateProjectMemberOpts) (*http.Response, error) {
+func (a *MemberApiService) CreateProjectMember(projectNameOrId string, localVarOptionals *MemberApiCreateProjectMemberOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
@@ -95,7 +95,7 @@ func (a *MemberApiService) CreateProjectMember(ctx context.Context, projectNameO
 		}
 		localVarPostBody = &localVarOptionalProjectMember
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
@@ -196,7 +196,7 @@ type MemberApiDeleteProjectMemberOpts struct {
 	XIsResourceName optional.Bool
 }
 
-func (a *MemberApiService) DeleteProjectMember(ctx context.Context, projectNameOrId string, mid int64, localVarOptionals *MemberApiDeleteProjectMemberOpts) (*http.Response, error) {
+func (a *MemberApiService) DeleteProjectMember(projectNameOrId string, mid int64, localVarOptionals *MemberApiDeleteProjectMemberOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
 		localVarPostBody   interface{}
@@ -237,7 +237,7 @@ func (a *MemberApiService) DeleteProjectMember(ctx context.Context, projectNameO
 	if localVarOptionals != nil && localVarOptionals.XIsResourceName.IsSet() {
 		localVarHeaderParams["X-Is-Resource-Name"] = parameterToString(localVarOptionals.XIsResourceName.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
@@ -328,7 +328,7 @@ type MemberApiGetProjectMemberOpts struct {
 	XIsResourceName optional.Bool
 }
 
-func (a *MemberApiService) GetProjectMember(ctx context.Context, projectNameOrId string, mid int64, localVarOptionals *MemberApiGetProjectMemberOpts) (ProjectMemberEntity, *http.Response, error) {
+func (a *MemberApiService) GetProjectMember(projectNameOrId string, mid int64, localVarOptionals *MemberApiGetProjectMemberOpts) (ProjectMemberEntity, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -369,7 +369,7 @@ func (a *MemberApiService) GetProjectMember(ctx context.Context, projectNameOrId
 	if localVarOptionals != nil && localVarOptionals.XIsResourceName.IsSet() {
 		localVarHeaderParams["X-Is-Resource-Name"] = parameterToString(localVarOptionals.XIsResourceName.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -492,7 +492,7 @@ type MemberApiListProjectMembersOpts struct {
 	Entityname optional.String
 }
 
-func (a *MemberApiService) ListProjectMembers(ctx context.Context, projectNameOrId string, localVarOptionals *MemberApiListProjectMembersOpts) ([]ProjectMemberEntity, *http.Response, error) {
+func (a *MemberApiService) ListProjectMembers(projectNameOrId string, localVarOptionals *MemberApiListProjectMembersOpts) ([]ProjectMemberEntity, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -541,7 +541,7 @@ func (a *MemberApiService) ListProjectMembers(ctx context.Context, projectNameOr
 	if localVarOptionals != nil && localVarOptionals.XIsResourceName.IsSet() {
 		localVarHeaderParams["X-Is-Resource-Name"] = parameterToString(localVarOptionals.XIsResourceName.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -661,7 +661,7 @@ type MemberApiUpdateProjectMemberOpts struct {
 	Role optional.Interface
 }
 
-func (a *MemberApiService) UpdateProjectMember(ctx context.Context, projectNameOrId string, mid int64, localVarOptionals *MemberApiUpdateProjectMemberOpts) (*http.Response, error) {
+func (a *MemberApiService) UpdateProjectMember(projectNameOrId string, mid int64, localVarOptionals *MemberApiUpdateProjectMemberOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
@@ -711,7 +711,7 @@ func (a *MemberApiService) UpdateProjectMember(ctx context.Context, projectNameO
 		}
 		localVarPostBody = &localVarOptionalRole
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}

@@ -42,7 +42,7 @@ type ScannerApiCreateScannerOpts struct {
 	XRequestId optional.String
 }
 
-func (a *ScannerApiService) CreateScanner(ctx context.Context, registration ScannerRegistrationReq, localVarOptionals *ScannerApiCreateScannerOpts) (*http.Response, error) {
+func (a *ScannerApiService) CreateScanner(registration ScannerRegistrationReq, localVarOptionals *ScannerApiCreateScannerOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
@@ -80,7 +80,7 @@ func (a *ScannerApiService) CreateScanner(ctx context.Context, registration Scan
 	}
 	// body params
 	localVarPostBody = &registration
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
@@ -168,7 +168,7 @@ type ScannerApiDeleteScannerOpts struct {
 	XRequestId optional.String
 }
 
-func (a *ScannerApiService) DeleteScanner(ctx context.Context, registrationId string, localVarOptionals *ScannerApiDeleteScannerOpts) (ScannerRegistration, *http.Response, error) {
+func (a *ScannerApiService) DeleteScanner(registrationId string, localVarOptionals *ScannerApiDeleteScannerOpts) (ScannerRegistration, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
 		localVarPostBody   interface{}
@@ -205,7 +205,7 @@ func (a *ScannerApiService) DeleteScanner(ctx context.Context, registrationId st
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -309,7 +309,7 @@ type ScannerApiGetScannerOpts struct {
 	XRequestId optional.String
 }
 
-func (a *ScannerApiService) GetScanner(ctx context.Context, registrationId string, localVarOptionals *ScannerApiGetScannerOpts) (ScannerRegistration, *http.Response, error) {
+func (a *ScannerApiService) GetScanner(registrationId string, localVarOptionals *ScannerApiGetScannerOpts) (ScannerRegistration, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -346,7 +346,7 @@ func (a *ScannerApiService) GetScanner(ctx context.Context, registrationId strin
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -450,7 +450,7 @@ type ScannerApiGetScannerMetadataOpts struct {
 	XRequestId optional.String
 }
 
-func (a *ScannerApiService) GetScannerMetadata(ctx context.Context, registrationId string, localVarOptionals *ScannerApiGetScannerMetadataOpts) (ScannerAdapterMetadata, *http.Response, error) {
+func (a *ScannerApiService) GetScannerMetadata(registrationId string, localVarOptionals *ScannerApiGetScannerMetadataOpts) (ScannerAdapterMetadata, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -487,7 +487,7 @@ func (a *ScannerApiService) GetScannerMetadata(ctx context.Context, registration
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -587,7 +587,7 @@ type ScannerApiListScannersOpts struct {
 	PageSize optional.Int64
 }
 
-func (a *ScannerApiService) ListScanners(ctx context.Context, localVarOptionals *ScannerApiListScannersOpts) ([]ScannerRegistration, *http.Response, error) {
+func (a *ScannerApiService) ListScanners(localVarOptionals *ScannerApiListScannersOpts) ([]ScannerRegistration, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -635,7 +635,7 @@ func (a *ScannerApiService) ListScanners(ctx context.Context, localVarOptionals 
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -739,7 +739,7 @@ type ScannerApiPingScannerOpts struct {
 	XRequestId optional.String
 }
 
-func (a *ScannerApiService) PingScanner(ctx context.Context, settings ScannerRegistrationSettings, localVarOptionals *ScannerApiPingScannerOpts) (*http.Response, error) {
+func (a *ScannerApiService) PingScanner(settings ScannerRegistrationSettings, localVarOptionals *ScannerApiPingScannerOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
@@ -777,7 +777,7 @@ func (a *ScannerApiService) PingScanner(ctx context.Context, settings ScannerReg
 	}
 	// body params
 	localVarPostBody = &settings
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
@@ -866,7 +866,7 @@ type ScannerApiSetScannerAsDefaultOpts struct {
 	XRequestId optional.String
 }
 
-func (a *ScannerApiService) SetScannerAsDefault(ctx context.Context, registrationId string, payload IsDefault, localVarOptionals *ScannerApiSetScannerAsDefaultOpts) (*http.Response, error) {
+func (a *ScannerApiService) SetScannerAsDefault(registrationId string, payload IsDefault, localVarOptionals *ScannerApiSetScannerAsDefaultOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Patch")
 		localVarPostBody   interface{}
@@ -905,7 +905,7 @@ func (a *ScannerApiService) SetScannerAsDefault(ctx context.Context, registratio
 	}
 	// body params
 	localVarPostBody = &payload
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
@@ -983,7 +983,7 @@ type ScannerApiUpdateScannerOpts struct {
 	XRequestId optional.String
 }
 
-func (a *ScannerApiService) UpdateScanner(ctx context.Context, registrationId string, registration ScannerRegistrationReq, localVarOptionals *ScannerApiUpdateScannerOpts) (*http.Response, error) {
+func (a *ScannerApiService) UpdateScanner(registrationId string, registration ScannerRegistrationReq, localVarOptionals *ScannerApiUpdateScannerOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
@@ -1022,7 +1022,7 @@ func (a *ScannerApiService) UpdateScanner(ctx context.Context, registrationId st
 	}
 	// body params
 	localVarPostBody = &registration
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}

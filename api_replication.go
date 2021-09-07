@@ -42,7 +42,7 @@ type ReplicationApiCreateReplicationPolicyOpts struct {
 	XRequestId optional.String
 }
 
-func (a *ReplicationApiService) CreateReplicationPolicy(ctx context.Context, policy ReplicationPolicy, localVarOptionals *ReplicationApiCreateReplicationPolicyOpts) (*http.Response, error) {
+func (a *ReplicationApiService) CreateReplicationPolicy(policy ReplicationPolicy, localVarOptionals *ReplicationApiCreateReplicationPolicyOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
@@ -80,7 +80,7 @@ func (a *ReplicationApiService) CreateReplicationPolicy(ctx context.Context, pol
 	}
 	// body params
 	localVarPostBody = &policy
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
@@ -179,7 +179,7 @@ type ReplicationApiDeleteReplicationPolicyOpts struct {
 	XRequestId optional.String
 }
 
-func (a *ReplicationApiService) DeleteReplicationPolicy(ctx context.Context, id int64, localVarOptionals *ReplicationApiDeleteReplicationPolicyOpts) (*http.Response, error) {
+func (a *ReplicationApiService) DeleteReplicationPolicy(id int64, localVarOptionals *ReplicationApiDeleteReplicationPolicyOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
 		localVarPostBody   interface{}
@@ -216,7 +216,7 @@ func (a *ReplicationApiService) DeleteReplicationPolicy(ctx context.Context, id 
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
@@ -315,7 +315,7 @@ type ReplicationApiGetReplicationExecutionOpts struct {
 	XRequestId optional.String
 }
 
-func (a *ReplicationApiService) GetReplicationExecution(ctx context.Context, id int64, localVarOptionals *ReplicationApiGetReplicationExecutionOpts) (ReplicationExecution, *http.Response, error) {
+func (a *ReplicationApiService) GetReplicationExecution(id int64, localVarOptionals *ReplicationApiGetReplicationExecutionOpts) (ReplicationExecution, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -352,7 +352,7 @@ func (a *ReplicationApiService) GetReplicationExecution(ctx context.Context, id 
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -457,7 +457,7 @@ type ReplicationApiGetReplicationLogOpts struct {
 	XRequestId optional.String
 }
 
-func (a *ReplicationApiService) GetReplicationLog(ctx context.Context, id int64, taskId int64, localVarOptionals *ReplicationApiGetReplicationLogOpts) (string, *http.Response, error) {
+func (a *ReplicationApiService) GetReplicationLog(id int64, taskId int64, localVarOptionals *ReplicationApiGetReplicationLogOpts) (string, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -495,7 +495,7 @@ func (a *ReplicationApiService) GetReplicationLog(ctx context.Context, id int64,
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -599,7 +599,7 @@ type ReplicationApiGetReplicationPolicyOpts struct {
 	XRequestId optional.String
 }
 
-func (a *ReplicationApiService) GetReplicationPolicy(ctx context.Context, id int64, localVarOptionals *ReplicationApiGetReplicationPolicyOpts) (ReplicationPolicy, *http.Response, error) {
+func (a *ReplicationApiService) GetReplicationPolicy(id int64, localVarOptionals *ReplicationApiGetReplicationPolicyOpts) (ReplicationPolicy, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -636,7 +636,7 @@ func (a *ReplicationApiService) GetReplicationPolicy(ctx context.Context, id int
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -740,7 +740,7 @@ type ReplicationApiListReplicationExecutionsOpts struct {
 	Trigger optional.String
 }
 
-func (a *ReplicationApiService) ListReplicationExecutions(ctx context.Context, localVarOptionals *ReplicationApiListReplicationExecutionsOpts) ([]ReplicationExecution, *http.Response, error) {
+func (a *ReplicationApiService) ListReplicationExecutions(localVarOptionals *ReplicationApiListReplicationExecutionsOpts) ([]ReplicationExecution, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -794,7 +794,7 @@ func (a *ReplicationApiService) ListReplicationExecutions(ctx context.Context, l
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -896,7 +896,7 @@ type ReplicationApiListReplicationPoliciesOpts struct {
 	Name optional.String
 }
 
-func (a *ReplicationApiService) ListReplicationPolicies(ctx context.Context, localVarOptionals *ReplicationApiListReplicationPoliciesOpts) ([]ReplicationPolicy, *http.Response, error) {
+func (a *ReplicationApiService) ListReplicationPolicies(localVarOptionals *ReplicationApiListReplicationPoliciesOpts) ([]ReplicationPolicy, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -947,7 +947,7 @@ func (a *ReplicationApiService) ListReplicationPolicies(ctx context.Context, loc
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -1050,7 +1050,7 @@ type ReplicationApiListReplicationTasksOpts struct {
 	ResourceType optional.String
 }
 
-func (a *ReplicationApiService) ListReplicationTasks(ctx context.Context, id int64, localVarOptionals *ReplicationApiListReplicationTasksOpts) ([]ReplicationTask, *http.Response, error) {
+func (a *ReplicationApiService) ListReplicationTasks(id int64, localVarOptionals *ReplicationApiListReplicationTasksOpts) ([]ReplicationTask, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -1102,7 +1102,7 @@ func (a *ReplicationApiService) ListReplicationTasks(ctx context.Context, id int
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -1195,7 +1195,7 @@ type ReplicationApiStartReplicationOpts struct {
 	XRequestId optional.String
 }
 
-func (a *ReplicationApiService) StartReplication(ctx context.Context, execution StartReplicationExecution, localVarOptionals *ReplicationApiStartReplicationOpts) (*http.Response, error) {
+func (a *ReplicationApiService) StartReplication(execution StartReplicationExecution, localVarOptionals *ReplicationApiStartReplicationOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
@@ -1233,7 +1233,7 @@ func (a *ReplicationApiService) StartReplication(ctx context.Context, execution 
 	}
 	// body params
 	localVarPostBody = &execution
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
@@ -1321,7 +1321,7 @@ type ReplicationApiStopReplicationOpts struct {
 	XRequestId optional.String
 }
 
-func (a *ReplicationApiService) StopReplication(ctx context.Context, id int64, localVarOptionals *ReplicationApiStopReplicationOpts) (*http.Response, error) {
+func (a *ReplicationApiService) StopReplication(id int64, localVarOptionals *ReplicationApiStopReplicationOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
@@ -1358,7 +1358,7 @@ func (a *ReplicationApiService) StopReplication(ctx context.Context, id int64, l
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
@@ -1447,7 +1447,7 @@ type ReplicationApiUpdateReplicationPolicyOpts struct {
 	XRequestId optional.String
 }
 
-func (a *ReplicationApiService) UpdateReplicationPolicy(ctx context.Context, id int64, policy ReplicationPolicy, localVarOptionals *ReplicationApiUpdateReplicationPolicyOpts) (*http.Response, error) {
+func (a *ReplicationApiService) UpdateReplicationPolicy(id int64, policy ReplicationPolicy, localVarOptionals *ReplicationApiUpdateReplicationPolicyOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
@@ -1486,7 +1486,7 @@ func (a *ReplicationApiService) UpdateReplicationPolicy(ctx context.Context, id 
 	}
 	// body params
 	localVarPostBody = &policy
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}

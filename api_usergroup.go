@@ -43,7 +43,7 @@ type UsergroupApiCreateUserGroupOpts struct {
 	Usergroup optional.Interface
 }
 
-func (a *UsergroupApiService) CreateUserGroup(ctx context.Context, localVarOptionals *UsergroupApiCreateUserGroupOpts) (*http.Response, error) {
+func (a *UsergroupApiService) CreateUserGroup(localVarOptionals *UsergroupApiCreateUserGroupOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
@@ -88,7 +88,7 @@ func (a *UsergroupApiService) CreateUserGroup(ctx context.Context, localVarOptio
 		}
 		localVarPostBody = &localVarOptionalUsergroup
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
@@ -187,7 +187,7 @@ type UsergroupApiDeleteUserGroupOpts struct {
 	XRequestId optional.String
 }
 
-func (a *UsergroupApiService) DeleteUserGroup(ctx context.Context, groupId int32, localVarOptionals *UsergroupApiDeleteUserGroupOpts) (*http.Response, error) {
+func (a *UsergroupApiService) DeleteUserGroup(groupId int32, localVarOptionals *UsergroupApiDeleteUserGroupOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
 		localVarPostBody   interface{}
@@ -224,7 +224,7 @@ func (a *UsergroupApiService) DeleteUserGroup(ctx context.Context, groupId int32
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
@@ -312,7 +312,7 @@ type UsergroupApiGetUserGroupOpts struct {
 	XRequestId optional.String
 }
 
-func (a *UsergroupApiService) GetUserGroup(ctx context.Context, groupId int64, localVarOptionals *UsergroupApiGetUserGroupOpts) (UserGroup, *http.Response, error) {
+func (a *UsergroupApiService) GetUserGroup(groupId int64, localVarOptionals *UsergroupApiGetUserGroupOpts) (UserGroup, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -349,7 +349,7 @@ func (a *UsergroupApiService) GetUserGroup(ctx context.Context, groupId int64, l
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -469,7 +469,7 @@ type UsergroupApiListUserGroupsOpts struct {
 	LdapGroupDn optional.String
 }
 
-func (a *UsergroupApiService) ListUserGroups(ctx context.Context, localVarOptionals *UsergroupApiListUserGroupsOpts) ([]UserGroup, *http.Response, error) {
+func (a *UsergroupApiService) ListUserGroups(localVarOptionals *UsergroupApiListUserGroupsOpts) ([]UserGroup, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -514,7 +514,7 @@ func (a *UsergroupApiService) ListUserGroups(ctx context.Context, localVarOption
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -611,7 +611,7 @@ type UsergroupApiSearchUserGroupsOpts struct {
 	PageSize optional.Int64
 }
 
-func (a *UsergroupApiService) SearchUserGroups(ctx context.Context, groupname string, localVarOptionals *UsergroupApiSearchUserGroupsOpts) ([]UserGroupSearchItem, *http.Response, error) {
+func (a *UsergroupApiService) SearchUserGroups(groupname string, localVarOptionals *UsergroupApiSearchUserGroupsOpts) ([]UserGroupSearchItem, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -654,7 +654,7 @@ func (a *UsergroupApiService) SearchUserGroups(ctx context.Context, groupname st
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -738,7 +738,7 @@ type UsergroupApiUpdateUserGroupOpts struct {
 	Usergroup optional.Interface
 }
 
-func (a *UsergroupApiService) UpdateUserGroup(ctx context.Context, groupId int64, localVarOptionals *UsergroupApiUpdateUserGroupOpts) (*http.Response, error) {
+func (a *UsergroupApiService) UpdateUserGroup(groupId int64, localVarOptionals *UsergroupApiUpdateUserGroupOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
@@ -784,7 +784,7 @@ func (a *UsergroupApiService) UpdateUserGroup(ctx context.Context, groupId int64
 		}
 		localVarPostBody = &localVarOptionalUsergroup
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}

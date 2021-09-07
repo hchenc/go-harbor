@@ -42,7 +42,7 @@ type UserApiCreateUserOpts struct {
 	XRequestId optional.String
 }
 
-func (a *UserApiService) CreateUser(ctx context.Context, userReq UserCreationReq, localVarOptionals *UserApiCreateUserOpts) (*http.Response, error) {
+func (a *UserApiService) CreateUser(userReq UserCreationReq, localVarOptionals *UserApiCreateUserOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
@@ -80,7 +80,7 @@ func (a *UserApiService) CreateUser(ctx context.Context, userReq UserCreationReq
 	}
 	// body params
 	localVarPostBody = &userReq
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
@@ -168,7 +168,7 @@ type UserApiDeleteUserOpts struct {
 	XRequestId optional.String
 }
 
-func (a *UserApiService) DeleteUser(ctx context.Context, userId int32, localVarOptionals *UserApiDeleteUserOpts) (*http.Response, error) {
+func (a *UserApiService) DeleteUser(userId int32, localVarOptionals *UserApiDeleteUserOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
 		localVarPostBody   interface{}
@@ -205,7 +205,7 @@ func (a *UserApiService) DeleteUser(ctx context.Context, userId int32, localVarO
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
@@ -291,7 +291,7 @@ type UserApiGetCurrentUserInfoOpts struct {
 	XRequestId optional.String
 }
 
-func (a *UserApiService) GetCurrentUserInfo(ctx context.Context, localVarOptionals *UserApiGetCurrentUserInfoOpts) (UserResp, *http.Response, error) {
+func (a *UserApiService) GetCurrentUserInfo(localVarOptionals *UserApiGetCurrentUserInfoOpts) (UserResp, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -327,7 +327,7 @@ func (a *UserApiService) GetCurrentUserInfo(ctx context.Context, localVarOptiona
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -411,7 +411,7 @@ type UserApiGetCurrentUserPermissionsOpts struct {
 	Relative optional.Bool
 }
 
-func (a *UserApiService) GetCurrentUserPermissions(ctx context.Context, localVarOptionals *UserApiGetCurrentUserPermissionsOpts) ([]Permission, *http.Response, error) {
+func (a *UserApiService) GetCurrentUserPermissions(localVarOptionals *UserApiGetCurrentUserPermissionsOpts) ([]Permission, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -453,7 +453,7 @@ func (a *UserApiService) GetCurrentUserPermissions(ctx context.Context, localVar
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -512,7 +512,7 @@ type UserApiGetUserOpts struct {
 	XRequestId optional.String
 }
 
-func (a *UserApiService) GetUser(ctx context.Context, userId int32, localVarOptionals *UserApiGetUserOpts) (UserResp, *http.Response, error) {
+func (a *UserApiService) GetUser(userId int32, localVarOptionals *UserApiGetUserOpts) (UserResp, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -549,7 +549,7 @@ func (a *UserApiService) GetUser(ctx context.Context, userId int32, localVarOpti
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -659,7 +659,7 @@ type UserApiListUsersOpts struct {
 	PageSize optional.Int64
 }
 
-func (a *UserApiService) ListUsers(ctx context.Context, localVarOptionals *UserApiListUsersOpts) ([]UserResp, *http.Response, error) {
+func (a *UserApiService) ListUsers(localVarOptionals *UserApiListUsersOpts) ([]UserResp, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -707,7 +707,7 @@ func (a *UserApiService) ListUsers(ctx context.Context, localVarOptionals *UserA
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -804,7 +804,7 @@ type UserApiSearchUsersOpts struct {
 	PageSize optional.Int64
 }
 
-func (a *UserApiService) SearchUsers(ctx context.Context, username string, localVarOptionals *UserApiSearchUsersOpts) ([]UserSearchRespItem, *http.Response, error) {
+func (a *UserApiService) SearchUsers(username string, localVarOptionals *UserApiSearchUsersOpts) ([]UserSearchRespItem, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -847,7 +847,7 @@ func (a *UserApiService) SearchUsers(ctx context.Context, username string, local
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -930,7 +930,7 @@ type UserApiSetCliSecretOpts struct {
 	XRequestId optional.String
 }
 
-func (a *UserApiService) SetCliSecret(ctx context.Context, userId int32, secret OidcCliSecretReq, localVarOptionals *UserApiSetCliSecretOpts) (*http.Response, error) {
+func (a *UserApiService) SetCliSecret(userId int32, secret OidcCliSecretReq, localVarOptionals *UserApiSetCliSecretOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
@@ -969,7 +969,7 @@ func (a *UserApiService) SetCliSecret(ctx context.Context, userId int32, secret 
 	}
 	// body params
 	localVarPostBody = &secret
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
@@ -1057,7 +1057,7 @@ type UserApiSetUserSysAdminOpts struct {
 	XRequestId optional.String
 }
 
-func (a *UserApiService) SetUserSysAdmin(ctx context.Context, userId int32, sysadminFlag UserSysAdminFlag, localVarOptionals *UserApiSetUserSysAdminOpts) (*http.Response, error) {
+func (a *UserApiService) SetUserSysAdmin(userId int32, sysadminFlag UserSysAdminFlag, localVarOptionals *UserApiSetUserSysAdminOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
@@ -1096,7 +1096,7 @@ func (a *UserApiService) SetUserSysAdmin(ctx context.Context, userId int32, sysa
 	}
 	// body params
 	localVarPostBody = &sysadminFlag
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
@@ -1174,7 +1174,7 @@ type UserApiUpdateUserPasswordOpts struct {
 	XRequestId optional.String
 }
 
-func (a *UserApiService) UpdateUserPassword(ctx context.Context, userId int32, password PasswordReq, localVarOptionals *UserApiUpdateUserPasswordOpts) (*http.Response, error) {
+func (a *UserApiService) UpdateUserPassword(userId int32, password PasswordReq, localVarOptionals *UserApiUpdateUserPasswordOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
@@ -1213,7 +1213,7 @@ func (a *UserApiService) UpdateUserPassword(ctx context.Context, userId int32, p
 	}
 	// body params
 	localVarPostBody = &password
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
@@ -1279,7 +1279,7 @@ type UserApiUpdateUserProfileOpts struct {
 	XRequestId optional.String
 }
 
-func (a *UserApiService) UpdateUserProfile(ctx context.Context, userId int32, profile UserProfile, localVarOptionals *UserApiUpdateUserProfileOpts) (*http.Response, error) {
+func (a *UserApiService) UpdateUserProfile(userId int32, profile UserProfile, localVarOptionals *UserApiUpdateUserProfileOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
@@ -1318,7 +1318,7 @@ func (a *UserApiService) UpdateUserProfile(ctx context.Context, userId int32, pr
 	}
 	// body params
 	localVarPostBody = &profile
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}

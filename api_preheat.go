@@ -42,7 +42,7 @@ type PreheatApiCreateInstanceOpts struct {
 	XRequestId optional.String
 }
 
-func (a *PreheatApiService) CreateInstance(ctx context.Context, instance Instance, localVarOptionals *PreheatApiCreateInstanceOpts) (*http.Response, error) {
+func (a *PreheatApiService) CreateInstance(instance Instance, localVarOptionals *PreheatApiCreateInstanceOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
@@ -80,7 +80,7 @@ func (a *PreheatApiService) CreateInstance(ctx context.Context, instance Instanc
 	}
 	// body params
 	localVarPostBody = &instance
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
@@ -191,7 +191,7 @@ type PreheatApiCreatePolicyOpts struct {
 	XRequestId optional.String
 }
 
-func (a *PreheatApiService) CreatePolicy(ctx context.Context, projectName string, policy PreheatPolicy, localVarOptionals *PreheatApiCreatePolicyOpts) (*http.Response, error) {
+func (a *PreheatApiService) CreatePolicy(projectName string, policy PreheatPolicy, localVarOptionals *PreheatApiCreatePolicyOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
@@ -230,7 +230,7 @@ func (a *PreheatApiService) CreatePolicy(ctx context.Context, projectName string
 	}
 	// body params
 	localVarPostBody = &policy
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
@@ -329,7 +329,7 @@ type PreheatApiDeleteInstanceOpts struct {
 	XRequestId optional.String
 }
 
-func (a *PreheatApiService) DeleteInstance(ctx context.Context, preheatInstanceName string, localVarOptionals *PreheatApiDeleteInstanceOpts) (*http.Response, error) {
+func (a *PreheatApiService) DeleteInstance(preheatInstanceName string, localVarOptionals *PreheatApiDeleteInstanceOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
 		localVarPostBody   interface{}
@@ -366,7 +366,7 @@ func (a *PreheatApiService) DeleteInstance(ctx context.Context, preheatInstanceN
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
@@ -455,7 +455,7 @@ type PreheatApiDeletePolicyOpts struct {
 	XRequestId optional.String
 }
 
-func (a *PreheatApiService) DeletePolicy(ctx context.Context, projectName string, preheatPolicyName string, localVarOptionals *PreheatApiDeletePolicyOpts) (*http.Response, error) {
+func (a *PreheatApiService) DeletePolicy(projectName string, preheatPolicyName string, localVarOptionals *PreheatApiDeletePolicyOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
 		localVarPostBody   interface{}
@@ -493,7 +493,7 @@ func (a *PreheatApiService) DeletePolicy(ctx context.Context, projectName string
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
@@ -594,7 +594,7 @@ type PreheatApiGetExecutionOpts struct {
 	XRequestId optional.String
 }
 
-func (a *PreheatApiService) GetExecution(ctx context.Context, projectName string, preheatPolicyName string, executionId int32, localVarOptionals *PreheatApiGetExecutionOpts) (Execution, *http.Response, error) {
+func (a *PreheatApiService) GetExecution(projectName string, preheatPolicyName string, executionId int32, localVarOptionals *PreheatApiGetExecutionOpts) (Execution, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -633,7 +633,7 @@ func (a *PreheatApiService) GetExecution(ctx context.Context, projectName string
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -748,7 +748,7 @@ type PreheatApiGetInstanceOpts struct {
 	XRequestId optional.String
 }
 
-func (a *PreheatApiService) GetInstance(ctx context.Context, preheatInstanceName string, localVarOptionals *PreheatApiGetInstanceOpts) (Instance, *http.Response, error) {
+func (a *PreheatApiService) GetInstance(preheatInstanceName string, localVarOptionals *PreheatApiGetInstanceOpts) (Instance, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -785,7 +785,7 @@ func (a *PreheatApiService) GetInstance(ctx context.Context, preheatInstanceName
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -901,7 +901,7 @@ type PreheatApiGetPolicyOpts struct {
 	XRequestId optional.String
 }
 
-func (a *PreheatApiService) GetPolicy(ctx context.Context, projectName string, preheatPolicyName string, localVarOptionals *PreheatApiGetPolicyOpts) (PreheatPolicy, *http.Response, error) {
+func (a *PreheatApiService) GetPolicy(projectName string, preheatPolicyName string, localVarOptionals *PreheatApiGetPolicyOpts) (PreheatPolicy, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -939,7 +939,7 @@ func (a *PreheatApiService) GetPolicy(ctx context.Context, projectName string, p
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -1057,7 +1057,7 @@ type PreheatApiGetPreheatLogOpts struct {
 	XRequestId optional.String
 }
 
-func (a *PreheatApiService) GetPreheatLog(ctx context.Context, projectName string, preheatPolicyName string, executionId int32, taskId int32, localVarOptionals *PreheatApiGetPreheatLogOpts) (string, *http.Response, error) {
+func (a *PreheatApiService) GetPreheatLog(projectName string, preheatPolicyName string, executionId int32, taskId int32, localVarOptionals *PreheatApiGetPreheatLogOpts) (string, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -1097,7 +1097,7 @@ func (a *PreheatApiService) GetPreheatLog(ctx context.Context, projectName strin
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -1221,7 +1221,7 @@ type PreheatApiListExecutionsOpts struct {
 	Sort optional.String
 }
 
-func (a *PreheatApiService) ListExecutions(ctx context.Context, projectName string, preheatPolicyName string, localVarOptionals *PreheatApiListExecutionsOpts) ([]Execution, *http.Response, error) {
+func (a *PreheatApiService) ListExecutions(projectName string, preheatPolicyName string, localVarOptionals *PreheatApiListExecutionsOpts) ([]Execution, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -1271,7 +1271,7 @@ func (a *PreheatApiService) ListExecutions(ctx context.Context, projectName stri
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -1393,7 +1393,7 @@ type PreheatApiListInstancesOpts struct {
 	Sort optional.String
 }
 
-func (a *PreheatApiService) ListInstances(ctx context.Context, localVarOptionals *PreheatApiListInstancesOpts) ([]Instance, *http.Response, error) {
+func (a *PreheatApiService) ListInstances(localVarOptionals *PreheatApiListInstancesOpts) ([]Instance, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -1441,7 +1441,7 @@ func (a *PreheatApiService) ListInstances(ctx context.Context, localVarOptionals
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -1564,7 +1564,7 @@ type PreheatApiListPoliciesOpts struct {
 	Sort optional.String
 }
 
-func (a *PreheatApiService) ListPolicies(ctx context.Context, projectName string, localVarOptionals *PreheatApiListPoliciesOpts) ([]PreheatPolicy, *http.Response, error) {
+func (a *PreheatApiService) ListPolicies(projectName string, localVarOptionals *PreheatApiListPoliciesOpts) ([]PreheatPolicy, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -1613,7 +1613,7 @@ func (a *PreheatApiService) ListPolicies(ctx context.Context, projectName string
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -1716,7 +1716,7 @@ type PreheatApiListProvidersOpts struct {
 	XRequestId optional.String
 }
 
-func (a *PreheatApiService) ListProviders(ctx context.Context, localVarOptionals *PreheatApiListProvidersOpts) ([]Metadata, *http.Response, error) {
+func (a *PreheatApiService) ListProviders(localVarOptionals *PreheatApiListProvidersOpts) ([]Metadata, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -1752,7 +1752,7 @@ func (a *PreheatApiService) ListProviders(ctx context.Context, localVarOptionals
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -1867,7 +1867,7 @@ type PreheatApiListProvidersUnderProjectOpts struct {
 	XRequestId optional.String
 }
 
-func (a *PreheatApiService) ListProvidersUnderProject(ctx context.Context, projectName string, localVarOptionals *PreheatApiListProvidersUnderProjectOpts) ([]ProviderUnderProject, *http.Response, error) {
+func (a *PreheatApiService) ListProvidersUnderProject(projectName string, localVarOptionals *PreheatApiListProvidersUnderProjectOpts) ([]ProviderUnderProject, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -1904,7 +1904,7 @@ func (a *PreheatApiService) ListProvidersUnderProject(ctx context.Context, proje
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -2029,7 +2029,7 @@ type PreheatApiListTasksOpts struct {
 	Sort optional.String
 }
 
-func (a *PreheatApiService) ListTasks(ctx context.Context, projectName string, preheatPolicyName string, executionId int32, localVarOptionals *PreheatApiListTasksOpts) ([]Task, *http.Response, error) {
+func (a *PreheatApiService) ListTasks(projectName string, preheatPolicyName string, executionId int32, localVarOptionals *PreheatApiListTasksOpts) ([]Task, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -2080,7 +2080,7 @@ func (a *PreheatApiService) ListTasks(ctx context.Context, projectName string, p
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -2197,7 +2197,7 @@ type PreheatApiManualPreheatOpts struct {
 	XRequestId optional.String
 }
 
-func (a *PreheatApiService) ManualPreheat(ctx context.Context, projectName string, preheatPolicyName string, policy PreheatPolicy, localVarOptionals *PreheatApiManualPreheatOpts) (*http.Response, error) {
+func (a *PreheatApiService) ManualPreheat(projectName string, preheatPolicyName string, policy PreheatPolicy, localVarOptionals *PreheatApiManualPreheatOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
@@ -2237,7 +2237,7 @@ func (a *PreheatApiService) ManualPreheat(ctx context.Context, projectName strin
 	}
 	// body params
 	localVarPostBody = &policy
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
@@ -2336,7 +2336,7 @@ type PreheatApiPingInstancesOpts struct {
 	XRequestId optional.String
 }
 
-func (a *PreheatApiService) PingInstances(ctx context.Context, instance Instance, localVarOptionals *PreheatApiPingInstancesOpts) (*http.Response, error) {
+func (a *PreheatApiService) PingInstances(instance Instance, localVarOptionals *PreheatApiPingInstancesOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
@@ -2374,7 +2374,7 @@ func (a *PreheatApiService) PingInstances(ctx context.Context, instance Instance
 	}
 	// body params
 	localVarPostBody = &instance
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
@@ -2454,7 +2454,7 @@ type PreheatApiStopExecutionOpts struct {
 	XRequestId optional.String
 }
 
-func (a *PreheatApiService) StopExecution(ctx context.Context, projectName string, preheatPolicyName string, executionId int32, execution Execution, localVarOptionals *PreheatApiStopExecutionOpts) (*http.Response, error) {
+func (a *PreheatApiService) StopExecution(projectName string, preheatPolicyName string, executionId int32, execution Execution, localVarOptionals *PreheatApiStopExecutionOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Patch")
 		localVarPostBody   interface{}
@@ -2495,7 +2495,7 @@ func (a *PreheatApiService) StopExecution(ctx context.Context, projectName strin
 	}
 	// body params
 	localVarPostBody = &execution
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
@@ -2595,7 +2595,7 @@ type PreheatApiUpdateInstanceOpts struct {
 	XRequestId optional.String
 }
 
-func (a *PreheatApiService) UpdateInstance(ctx context.Context, preheatInstanceName string, instance Instance, localVarOptionals *PreheatApiUpdateInstanceOpts) (*http.Response, error) {
+func (a *PreheatApiService) UpdateInstance(preheatInstanceName string, instance Instance, localVarOptionals *PreheatApiUpdateInstanceOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
@@ -2634,7 +2634,7 @@ func (a *PreheatApiService) UpdateInstance(ctx context.Context, preheatInstanceN
 	}
 	// body params
 	localVarPostBody = &instance
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
@@ -2735,7 +2735,7 @@ type PreheatApiUpdatePolicyOpts struct {
 	XRequestId optional.String
 }
 
-func (a *PreheatApiService) UpdatePolicy(ctx context.Context, projectName string, preheatPolicyName string, policy PreheatPolicy, localVarOptionals *PreheatApiUpdatePolicyOpts) (*http.Response, error) {
+func (a *PreheatApiService) UpdatePolicy(projectName string, preheatPolicyName string, policy PreheatPolicy, localVarOptionals *PreheatApiUpdatePolicyOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
@@ -2775,7 +2775,7 @@ func (a *PreheatApiService) UpdatePolicy(ctx context.Context, projectName string
 	}
 	// body params
 	localVarPostBody = &policy
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}

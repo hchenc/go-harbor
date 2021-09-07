@@ -40,7 +40,7 @@ type PingApiGetPingOpts struct {
 	XRequestId optional.String
 }
 
-func (a *PingApiService) GetPing(ctx context.Context, localVarOptionals *PingApiGetPingOpts) (string, *http.Response, error) {
+func (a *PingApiService) GetPing(localVarOptionals *PingApiGetPingOpts) (string, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -76,7 +76,7 @@ func (a *PingApiService) GetPing(ctx context.Context, localVarOptionals *PingApi
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}

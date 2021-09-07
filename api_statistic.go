@@ -40,7 +40,7 @@ type StatisticApiGetStatisticOpts struct {
 	XRequestId optional.String
 }
 
-func (a *StatisticApiService) GetStatistic(ctx context.Context, localVarOptionals *StatisticApiGetStatisticOpts) (Statistic, *http.Response, error) {
+func (a *StatisticApiService) GetStatistic(localVarOptionals *StatisticApiGetStatisticOpts) (Statistic, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -76,7 +76,7 @@ func (a *StatisticApiService) GetStatistic(ctx context.Context, localVarOptional
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}

@@ -41,7 +41,7 @@ type ScanAllApiCreateScanAllScheduleOpts struct {
 	XRequestId optional.String
 }
 
-func (a *ScanAllApiService) CreateScanAllSchedule(ctx context.Context, schedule Schedule, localVarOptionals *ScanAllApiCreateScanAllScheduleOpts) (*http.Response, error) {
+func (a *ScanAllApiService) CreateScanAllSchedule(schedule Schedule, localVarOptionals *ScanAllApiCreateScanAllScheduleOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
@@ -79,7 +79,7 @@ func (a *ScanAllApiService) CreateScanAllSchedule(ctx context.Context, schedule 
 	}
 	// body params
 	localVarPostBody = &schedule
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
@@ -188,7 +188,7 @@ type ScanAllApiGetLatestScanAllMetricsOpts struct {
 	XRequestId optional.String
 }
 
-func (a *ScanAllApiService) GetLatestScanAllMetrics(ctx context.Context, localVarOptionals *ScanAllApiGetLatestScanAllMetricsOpts) (Stats, *http.Response, error) {
+func (a *ScanAllApiService) GetLatestScanAllMetrics(localVarOptionals *ScanAllApiGetLatestScanAllMetricsOpts) (Stats, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -224,7 +224,7 @@ func (a *ScanAllApiService) GetLatestScanAllMetrics(ctx context.Context, localVa
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -327,7 +327,7 @@ type ScanAllApiGetLatestScheduledScanAllMetricsOpts struct {
 	XRequestId optional.String
 }
 
-func (a *ScanAllApiService) GetLatestScheduledScanAllMetrics(ctx context.Context, localVarOptionals *ScanAllApiGetLatestScheduledScanAllMetricsOpts) (Stats, *http.Response, error) {
+func (a *ScanAllApiService) GetLatestScheduledScanAllMetrics(localVarOptionals *ScanAllApiGetLatestScheduledScanAllMetricsOpts) (Stats, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -363,7 +363,7 @@ func (a *ScanAllApiService) GetLatestScheduledScanAllMetrics(ctx context.Context
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -466,7 +466,7 @@ type ScanAllApiGetScanAllScheduleOpts struct {
 	XRequestId optional.String
 }
 
-func (a *ScanAllApiService) GetScanAllSchedule(ctx context.Context, localVarOptionals *ScanAllApiGetScanAllScheduleOpts) (Schedule, *http.Response, error) {
+func (a *ScanAllApiService) GetScanAllSchedule(localVarOptionals *ScanAllApiGetScanAllScheduleOpts) (Schedule, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -502,7 +502,7 @@ func (a *ScanAllApiService) GetScanAllSchedule(ctx context.Context, localVarOpti
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -606,7 +606,7 @@ type ScanAllApiUpdateScanAllScheduleOpts struct {
 	XRequestId optional.String
 }
 
-func (a *ScanAllApiService) UpdateScanAllSchedule(ctx context.Context, schedule Schedule, localVarOptionals *ScanAllApiUpdateScanAllScheduleOpts) (*http.Response, error) {
+func (a *ScanAllApiService) UpdateScanAllSchedule(schedule Schedule, localVarOptionals *ScanAllApiUpdateScanAllScheduleOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
@@ -644,7 +644,7 @@ func (a *ScanAllApiService) UpdateScanAllSchedule(ctx context.Context, schedule 
 	}
 	// body params
 	localVarPostBody = &schedule
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}

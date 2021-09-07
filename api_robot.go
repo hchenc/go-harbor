@@ -42,7 +42,7 @@ type RobotApiCreateRobotOpts struct {
 	XRequestId optional.String
 }
 
-func (a *RobotApiService) CreateRobot(ctx context.Context, robot RobotCreate, localVarOptionals *RobotApiCreateRobotOpts) (RobotCreated, *http.Response, error) {
+func (a *RobotApiService) CreateRobot(robot RobotCreate, localVarOptionals *RobotApiCreateRobotOpts) (RobotCreated, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
@@ -80,7 +80,7 @@ func (a *RobotApiService) CreateRobot(ctx context.Context, robot RobotCreate, lo
 	}
 	// body params
 	localVarPostBody = &robot
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -195,7 +195,7 @@ type RobotApiDeleteRobotOpts struct {
 	XRequestId optional.String
 }
 
-func (a *RobotApiService) DeleteRobot(ctx context.Context, robotId int32, localVarOptionals *RobotApiDeleteRobotOpts) (*http.Response, error) {
+func (a *RobotApiService) DeleteRobot(robotId int32, localVarOptionals *RobotApiDeleteRobotOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
 		localVarPostBody   interface{}
@@ -232,7 +232,7 @@ func (a *RobotApiService) DeleteRobot(ctx context.Context, robotId int32, localV
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
@@ -331,7 +331,7 @@ type RobotApiGetRobotByIDOpts struct {
 	XRequestId optional.String
 }
 
-func (a *RobotApiService) GetRobotByID(ctx context.Context, robotId int32, localVarOptionals *RobotApiGetRobotByIDOpts) (Robot, *http.Response, error) {
+func (a *RobotApiService) GetRobotByID(robotId int32, localVarOptionals *RobotApiGetRobotByIDOpts) (Robot, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -368,7 +368,7 @@ func (a *RobotApiService) GetRobotByID(ctx context.Context, robotId int32, local
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -479,7 +479,7 @@ type RobotApiListRobotOpts struct {
 	PageSize optional.Int64
 }
 
-func (a *RobotApiService) ListRobot(ctx context.Context, localVarOptionals *RobotApiListRobotOpts) ([]Robot, *http.Response, error) {
+func (a *RobotApiService) ListRobot(localVarOptionals *RobotApiListRobotOpts) ([]Robot, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -527,7 +527,7 @@ func (a *RobotApiService) ListRobot(ctx context.Context, localVarOptionals *Robo
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -621,7 +621,7 @@ type RobotApiRefreshSecOpts struct {
 	XRequestId optional.String
 }
 
-func (a *RobotApiService) RefreshSec(ctx context.Context, robotId int32, robotSec RobotSec, localVarOptionals *RobotApiRefreshSecOpts) (RobotSec, *http.Response, error) {
+func (a *RobotApiService) RefreshSec(robotId int32, robotSec RobotSec, localVarOptionals *RobotApiRefreshSecOpts) (RobotSec, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Patch")
 		localVarPostBody   interface{}
@@ -660,7 +660,7 @@ func (a *RobotApiService) RefreshSec(ctx context.Context, robotId int32, robotSe
 	}
 	// body params
 	localVarPostBody = &robotSec
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -776,7 +776,7 @@ type RobotApiUpdateRobotOpts struct {
 	XRequestId optional.String
 }
 
-func (a *RobotApiService) UpdateRobot(ctx context.Context, robotId int32, robot Robot, localVarOptionals *RobotApiUpdateRobotOpts) (*http.Response, error) {
+func (a *RobotApiService) UpdateRobot(robotId int32, robot Robot, localVarOptionals *RobotApiUpdateRobotOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
@@ -815,7 +815,7 @@ func (a *RobotApiService) UpdateRobot(ctx context.Context, robotId int32, robot 
 	}
 	// body params
 	localVarPostBody = &robot
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}

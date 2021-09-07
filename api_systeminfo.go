@@ -41,7 +41,7 @@ type SysteminfoApiGetCertOpts struct {
 	XRequestId optional.String
 }
 
-func (a *SysteminfoApiService) GetCert(ctx context.Context, localVarOptionals *SysteminfoApiGetCertOpts) (*os.File, *http.Response, error) {
+func (a *SysteminfoApiService) GetCert(localVarOptionals *SysteminfoApiGetCertOpts) (*os.File, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -77,7 +77,7 @@ func (a *SysteminfoApiService) GetCert(ctx context.Context, localVarOptionals *S
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -147,7 +147,7 @@ type SysteminfoApiGetSystemInfoOpts struct {
 	XRequestId optional.String
 }
 
-func (a *SysteminfoApiService) GetSystemInfo(ctx context.Context, localVarOptionals *SysteminfoApiGetSystemInfoOpts) (GeneralInfo, *http.Response, error) {
+func (a *SysteminfoApiService) GetSystemInfo(localVarOptionals *SysteminfoApiGetSystemInfoOpts) (GeneralInfo, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -183,7 +183,7 @@ func (a *SysteminfoApiService) GetSystemInfo(ctx context.Context, localVarOption
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -253,7 +253,7 @@ type SysteminfoApiGetVolumesOpts struct {
 	XRequestId optional.String
 }
 
-func (a *SysteminfoApiService) GetVolumes(ctx context.Context, localVarOptionals *SysteminfoApiGetVolumesOpts) (SystemInfo, *http.Response, error) {
+func (a *SysteminfoApiService) GetVolumes(localVarOptionals *SysteminfoApiGetVolumesOpts) (SystemInfo, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -289,7 +289,7 @@ func (a *SysteminfoApiService) GetVolumes(ctx context.Context, localVarOptionals
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}

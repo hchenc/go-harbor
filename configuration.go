@@ -10,6 +10,7 @@
 package swagger
 
 import (
+	"context"
 	"net/http"
 )
 
@@ -56,11 +57,22 @@ type Configuration struct {
 	DefaultHeader map[string]string `json:"defaultHeader,omitempty"`
 	UserAgent     string            `json:"userAgent,omitempty"`
 	HTTPClient    *http.Client
+	Ctx           context.Context
 }
 
+//deprecated: Use NewConfigurationWithContext instead
 func NewConfiguration(basePath string) *Configuration {
 	cfg := &Configuration{
 		BasePath:      basePath,
+		DefaultHeader: make(map[string]string),
+	}
+	return cfg
+}
+
+func NewConfigurationWithContext(basePath string, ctx context.Context) *Configuration {
+	cfg := &Configuration{
+		BasePath:      basePath,
+		Ctx:           ctx,
 		DefaultHeader: make(map[string]string),
 	}
 	return cfg

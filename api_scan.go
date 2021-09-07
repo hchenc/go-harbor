@@ -45,7 +45,7 @@ type ScanApiGetReportLogOpts struct {
 	XRequestId optional.String
 }
 
-func (a *ScanApiService) GetReportLog(ctx context.Context, projectName string, repositoryName string, reference string, reportId string, localVarOptionals *ScanApiGetReportLogOpts) (string, *http.Response, error) {
+func (a *ScanApiService) GetReportLog(projectName string, repositoryName string, reference string, reportId string, localVarOptionals *ScanApiGetReportLogOpts) (string, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -85,7 +85,7 @@ func (a *ScanApiService) GetReportLog(ctx context.Context, projectName string, r
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -191,7 +191,7 @@ type ScanApiScanArtifactOpts struct {
 	XRequestId optional.String
 }
 
-func (a *ScanApiService) ScanArtifact(ctx context.Context, projectName string, repositoryName string, reference string, localVarOptionals *ScanApiScanArtifactOpts) (*http.Response, error) {
+func (a *ScanApiService) ScanArtifact(projectName string, repositoryName string, reference string, localVarOptionals *ScanApiScanArtifactOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
@@ -230,7 +230,7 @@ func (a *ScanApiService) ScanArtifact(ctx context.Context, projectName string, r
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}

@@ -48,7 +48,7 @@ type AuditlogApiListAuditLogsOpts struct {
 	PageSize optional.Int64
 }
 
-func (a *AuditlogApiService) ListAuditLogs(ctx context.Context, localVarOptionals *AuditlogApiListAuditLogsOpts) ([]AuditLog, *http.Response, error) {
+func (a *AuditlogApiService) ListAuditLogs(localVarOptionals *AuditlogApiListAuditLogsOpts) ([]AuditLog, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -96,7 +96,7 @@ func (a *AuditlogApiService) ListAuditLogs(ctx context.Context, localVarOptional
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}

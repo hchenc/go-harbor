@@ -46,7 +46,7 @@ type ProjectMetadataApiAddProjectMetadatasOpts struct {
 	Metadata optional.Interface
 }
 
-func (a *ProjectMetadataApiService) AddProjectMetadatas(ctx context.Context, projectNameOrId string, localVarOptionals *ProjectMetadataApiAddProjectMetadatasOpts) (*http.Response, error) {
+func (a *ProjectMetadataApiService) AddProjectMetadatas(projectNameOrId string, localVarOptionals *ProjectMetadataApiAddProjectMetadatasOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
@@ -91,7 +91,7 @@ func (a *ProjectMetadataApiService) AddProjectMetadatas(ctx context.Context, pro
 		localVarPostBody = localVarOptionals.Metadata.Value()
 		
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
@@ -204,7 +204,7 @@ type ProjectMetadataApiDeleteProjectMetadataOpts struct {
 	XIsResourceName optional.Bool
 }
 
-func (a *ProjectMetadataApiService) DeleteProjectMetadata(ctx context.Context, projectNameOrId string, metaName string, localVarOptionals *ProjectMetadataApiDeleteProjectMetadataOpts) (*http.Response, error) {
+func (a *ProjectMetadataApiService) DeleteProjectMetadata(projectNameOrId string, metaName string, localVarOptionals *ProjectMetadataApiDeleteProjectMetadataOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
 		localVarPostBody   interface{}
@@ -245,7 +245,7 @@ func (a *ProjectMetadataApiService) DeleteProjectMetadata(ctx context.Context, p
 	if localVarOptionals != nil && localVarOptionals.XIsResourceName.IsSet() {
 		localVarHeaderParams["X-Is-Resource-Name"] = parameterToString(localVarOptionals.XIsResourceName.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
@@ -358,7 +358,7 @@ type ProjectMetadataApiGetProjectMetadataOpts struct {
 	XIsResourceName optional.Bool
 }
 
-func (a *ProjectMetadataApiService) GetProjectMetadata(ctx context.Context, projectNameOrId string, metaName string, localVarOptionals *ProjectMetadataApiGetProjectMetadataOpts) (map[string]string, *http.Response, error) {
+func (a *ProjectMetadataApiService) GetProjectMetadata(projectNameOrId string, metaName string, localVarOptionals *ProjectMetadataApiGetProjectMetadataOpts) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -399,7 +399,7 @@ func (a *ProjectMetadataApiService) GetProjectMetadata(ctx context.Context, proj
 	if localVarOptionals != nil && localVarOptionals.XIsResourceName.IsSet() {
 		localVarHeaderParams["X-Is-Resource-Name"] = parameterToString(localVarOptionals.XIsResourceName.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -516,7 +516,7 @@ type ProjectMetadataApiListProjectMetadatasOpts struct {
 	XIsResourceName optional.Bool
 }
 
-func (a *ProjectMetadataApiService) ListProjectMetadatas(ctx context.Context, projectNameOrId string, localVarOptionals *ProjectMetadataApiListProjectMetadatasOpts) (map[string]string, *http.Response, error) {
+func (a *ProjectMetadataApiService) ListProjectMetadatas(projectNameOrId string, localVarOptionals *ProjectMetadataApiListProjectMetadatasOpts) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -556,7 +556,7 @@ func (a *ProjectMetadataApiService) ListProjectMetadatas(ctx context.Context, pr
 	if localVarOptionals != nil && localVarOptionals.XIsResourceName.IsSet() {
 		localVarHeaderParams["X-Is-Resource-Name"] = parameterToString(localVarOptionals.XIsResourceName.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -676,7 +676,7 @@ type ProjectMetadataApiUpdateProjectMetadataOpts struct {
 	Metadata optional.Interface
 }
 
-func (a *ProjectMetadataApiService) UpdateProjectMetadata(ctx context.Context, projectNameOrId string, metaName string, localVarOptionals *ProjectMetadataApiUpdateProjectMetadataOpts) (*http.Response, error) {
+func (a *ProjectMetadataApiService) UpdateProjectMetadata(projectNameOrId string, metaName string, localVarOptionals *ProjectMetadataApiUpdateProjectMetadataOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
@@ -722,7 +722,7 @@ func (a *ProjectMetadataApiService) UpdateProjectMetadata(ctx context.Context, p
 		localVarPostBody = localVarOptionals.Metadata.Value()
 		
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}

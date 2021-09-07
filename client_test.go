@@ -7,13 +7,16 @@ import (
 )
 
 func TestClient(t *testing.T) {
-	config := NewConfiguration("http://harbor.hchenc.com:5088/api/v2.0")
-	client := NewAPIClient(config)
 	ctx := context.WithValue(context.Background(), ContextBasicAuth, BasicAuth{
 		UserName: "admin",
 		Password: "Harbor12345",
 	})
-	projects, resp, err := client.ProjectApi.ListProjects(ctx, &ProjectApiListProjectsOpts{})
+	config := NewConfigurationWithContext("http://harbor.hchenc.com:5088/api/v2.0", ctx)
+
+	client := NewAPIClient(config)
+
+	projects, resp, err := client.ProjectApi.ListProjects(&ProjectApiListProjectsOpts{})
+	users, resp, err := client.UserApi.ListUsers(&UserApiListUsersOpts{})
 	defer resp.Body.Close()
-	fmt.Println(projects, resp, err)
+	fmt.Println(projects,users, resp, err)
 }

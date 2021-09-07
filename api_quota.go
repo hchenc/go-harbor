@@ -42,7 +42,7 @@ type QuotaApiGetQuotaOpts struct {
 	XRequestId optional.String
 }
 
-func (a *QuotaApiService) GetQuota(ctx context.Context, id int32, localVarOptionals *QuotaApiGetQuotaOpts) (Quota, *http.Response, error) {
+func (a *QuotaApiService) GetQuota(id int32, localVarOptionals *QuotaApiGetQuotaOpts) (Quota, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -79,7 +79,7 @@ func (a *QuotaApiService) GetQuota(ctx context.Context, id int32, localVarOption
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -192,7 +192,7 @@ type QuotaApiListQuotasOpts struct {
 	Sort optional.String
 }
 
-func (a *QuotaApiService) ListQuotas(ctx context.Context, localVarOptionals *QuotaApiListQuotasOpts) ([]Quota, *http.Response, error) {
+func (a *QuotaApiService) ListQuotas(localVarOptionals *QuotaApiListQuotasOpts) ([]Quota, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -243,7 +243,7 @@ func (a *QuotaApiService) ListQuotas(ctx context.Context, localVarOptionals *Quo
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -337,7 +337,7 @@ type QuotaApiUpdateQuotaOpts struct {
 	XRequestId optional.String
 }
 
-func (a *QuotaApiService) UpdateQuota(ctx context.Context, id int32, hard QuotaUpdateReq, localVarOptionals *QuotaApiUpdateQuotaOpts) (*http.Response, error) {
+func (a *QuotaApiService) UpdateQuota(id int32, hard QuotaUpdateReq, localVarOptionals *QuotaApiUpdateQuotaOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
@@ -376,7 +376,7 @@ func (a *QuotaApiService) UpdateQuota(ctx context.Context, id int32, hard QuotaU
 	}
 	// body params
 	localVarPostBody = &hard
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}

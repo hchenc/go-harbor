@@ -40,7 +40,7 @@ type SystemCVEAllowlistApiGetSystemCVEAllowlistOpts struct {
 	XRequestId optional.String
 }
 
-func (a *SystemCVEAllowlistApiService) GetSystemCVEAllowlist(ctx context.Context, localVarOptionals *SystemCVEAllowlistApiGetSystemCVEAllowlistOpts) (CveAllowlist, *http.Response, error) {
+func (a *SystemCVEAllowlistApiService) GetSystemCVEAllowlist(localVarOptionals *SystemCVEAllowlistApiGetSystemCVEAllowlistOpts) (CveAllowlist, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -76,7 +76,7 @@ func (a *SystemCVEAllowlistApiService) GetSystemCVEAllowlist(ctx context.Context
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -159,7 +159,7 @@ type SystemCVEAllowlistApiPutSystemCVEAllowlistOpts struct {
 	Allowlist optional.Interface
 }
 
-func (a *SystemCVEAllowlistApiService) PutSystemCVEAllowlist(ctx context.Context, localVarOptionals *SystemCVEAllowlistApiPutSystemCVEAllowlistOpts) (*http.Response, error) {
+func (a *SystemCVEAllowlistApiService) PutSystemCVEAllowlist(localVarOptionals *SystemCVEAllowlistApiPutSystemCVEAllowlistOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
@@ -204,7 +204,7 @@ func (a *SystemCVEAllowlistApiService) PutSystemCVEAllowlist(ctx context.Context
 		}
 		localVarPostBody = &localVarOptionalAllowlist
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}

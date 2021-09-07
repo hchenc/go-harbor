@@ -42,7 +42,7 @@ type LabelApiCreateLabelOpts struct {
 	XRequestId optional.String
 }
 
-func (a *LabelApiService) CreateLabel(ctx context.Context, label Label, localVarOptionals *LabelApiCreateLabelOpts) (*http.Response, error) {
+func (a *LabelApiService) CreateLabel(label Label, localVarOptionals *LabelApiCreateLabelOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
@@ -80,7 +80,7 @@ func (a *LabelApiService) CreateLabel(ctx context.Context, label Label, localVar
 	}
 	// body params
 	localVarPostBody = &label
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
@@ -179,7 +179,7 @@ type LabelApiDeleteLabelOpts struct {
 	XRequestId optional.String
 }
 
-func (a *LabelApiService) DeleteLabel(ctx context.Context, labelId int64, localVarOptionals *LabelApiDeleteLabelOpts) (*http.Response, error) {
+func (a *LabelApiService) DeleteLabel(labelId int64, localVarOptionals *LabelApiDeleteLabelOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
 		localVarPostBody   interface{}
@@ -216,7 +216,7 @@ func (a *LabelApiService) DeleteLabel(ctx context.Context, labelId int64, localV
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
@@ -304,7 +304,7 @@ type LabelApiGetLabelByIDOpts struct {
 	XRequestId optional.String
 }
 
-func (a *LabelApiService) GetLabelByID(ctx context.Context, labelId int64, localVarOptionals *LabelApiGetLabelByIDOpts) (Label, *http.Response, error) {
+func (a *LabelApiService) GetLabelByID(labelId int64, localVarOptionals *LabelApiGetLabelByIDOpts) (Label, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -341,7 +341,7 @@ func (a *LabelApiService) GetLabelByID(ctx context.Context, labelId int64, local
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -447,7 +447,7 @@ type LabelApiListLabelsOpts struct {
 	ProjectId optional.Int64
 }
 
-func (a *LabelApiService) ListLabels(ctx context.Context, localVarOptionals *LabelApiListLabelsOpts) ([]Label, *http.Response, error) {
+func (a *LabelApiService) ListLabels(localVarOptionals *LabelApiListLabelsOpts) ([]Label, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -504,7 +504,7 @@ func (a *LabelApiService) ListLabels(ctx context.Context, localVarOptionals *Lab
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -598,7 +598,7 @@ type LabelApiUpdateLabelOpts struct {
 	XRequestId optional.String
 }
 
-func (a *LabelApiService) UpdateLabel(ctx context.Context, labelId int64, label Label, localVarOptionals *LabelApiUpdateLabelOpts) (*http.Response, error) {
+func (a *LabelApiService) UpdateLabel(labelId int64, label Label, localVarOptionals *LabelApiUpdateLabelOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
@@ -637,7 +637,7 @@ func (a *LabelApiService) UpdateLabel(ctx context.Context, labelId int64, label 
 	}
 	// body params
 	localVarPostBody = &label
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}

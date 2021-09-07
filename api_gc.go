@@ -42,7 +42,7 @@ type GcApiCreateGCScheduleOpts struct {
 	XRequestId optional.String
 }
 
-func (a *GcApiService) CreateGCSchedule(ctx context.Context, schedule Schedule, localVarOptionals *GcApiCreateGCScheduleOpts) (*http.Response, error) {
+func (a *GcApiService) CreateGCSchedule(schedule Schedule, localVarOptionals *GcApiCreateGCScheduleOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
@@ -80,7 +80,7 @@ func (a *GcApiService) CreateGCSchedule(ctx context.Context, schedule Schedule, 
 	}
 	// body params
 	localVarPostBody = &schedule
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
@@ -179,7 +179,7 @@ type GcApiGetGCOpts struct {
 	XRequestId optional.String
 }
 
-func (a *GcApiService) GetGC(ctx context.Context, gcId int64, localVarOptionals *GcApiGetGCOpts) (GcHistory, *http.Response, error) {
+func (a *GcApiService) GetGC(gcId int64, localVarOptionals *GcApiGetGCOpts) (GcHistory, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -216,7 +216,7 @@ func (a *GcApiService) GetGC(ctx context.Context, gcId int64, localVarOptionals 
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -327,7 +327,7 @@ type GcApiGetGCHistoryOpts struct {
 	PageSize optional.Int64
 }
 
-func (a *GcApiService) GetGCHistory(ctx context.Context, localVarOptionals *GcApiGetGCHistoryOpts) ([]GcHistory, *http.Response, error) {
+func (a *GcApiService) GetGCHistory(localVarOptionals *GcApiGetGCHistoryOpts) ([]GcHistory, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -375,7 +375,7 @@ func (a *GcApiService) GetGCHistory(ctx context.Context, localVarOptionals *GcAp
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -468,7 +468,7 @@ type GcApiGetGCLogOpts struct {
 	XRequestId optional.String
 }
 
-func (a *GcApiService) GetGCLog(ctx context.Context, gcId int64, localVarOptionals *GcApiGetGCLogOpts) (string, *http.Response, error) {
+func (a *GcApiService) GetGCLog(gcId int64, localVarOptionals *GcApiGetGCLogOpts) (string, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -505,7 +505,7 @@ func (a *GcApiService) GetGCLog(ctx context.Context, gcId int64, localVarOptiona
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -619,7 +619,7 @@ type GcApiGetGCScheduleOpts struct {
 	XRequestId optional.String
 }
 
-func (a *GcApiService) GetGCSchedule(ctx context.Context, localVarOptionals *GcApiGetGCScheduleOpts) (GcHistory, *http.Response, error) {
+func (a *GcApiService) GetGCSchedule(localVarOptionals *GcApiGetGCScheduleOpts) (GcHistory, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -655,7 +655,7 @@ func (a *GcApiService) GetGCSchedule(ctx context.Context, localVarOptionals *GcA
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -748,7 +748,7 @@ type GcApiUpdateGCScheduleOpts struct {
 	XRequestId optional.String
 }
 
-func (a *GcApiService) UpdateGCSchedule(ctx context.Context, schedule Schedule, localVarOptionals *GcApiUpdateGCScheduleOpts) (*http.Response, error) {
+func (a *GcApiService) UpdateGCSchedule(schedule Schedule, localVarOptionals *GcApiUpdateGCScheduleOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
@@ -786,7 +786,7 @@ func (a *GcApiService) UpdateGCSchedule(ctx context.Context, schedule Schedule, 
 	}
 	// body params
 	localVarPostBody = &schedule
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}

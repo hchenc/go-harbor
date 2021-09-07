@@ -43,7 +43,7 @@ type RepositoryApiDeleteRepositoryOpts struct {
 	XRequestId optional.String
 }
 
-func (a *RepositoryApiService) DeleteRepository(ctx context.Context, projectName string, repositoryName string, localVarOptionals *RepositoryApiDeleteRepositoryOpts) (*http.Response, error) {
+func (a *RepositoryApiService) DeleteRepository(projectName string, repositoryName string, localVarOptionals *RepositoryApiDeleteRepositoryOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
 		localVarPostBody   interface{}
@@ -81,7 +81,7 @@ func (a *RepositoryApiService) DeleteRepository(ctx context.Context, projectName
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
@@ -181,7 +181,7 @@ type RepositoryApiGetRepositoryOpts struct {
 	XRequestId optional.String
 }
 
-func (a *RepositoryApiService) GetRepository(ctx context.Context, projectName string, repositoryName string, localVarOptionals *RepositoryApiGetRepositoryOpts) (Repository, *http.Response, error) {
+func (a *RepositoryApiService) GetRepository(projectName string, repositoryName string, localVarOptionals *RepositoryApiGetRepositoryOpts) (Repository, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -219,7 +219,7 @@ func (a *RepositoryApiService) GetRepository(ctx context.Context, projectName st
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -341,7 +341,7 @@ type RepositoryApiListAllRepositoriesOpts struct {
 	PageSize optional.Int64
 }
 
-func (a *RepositoryApiService) ListAllRepositories(ctx context.Context, localVarOptionals *RepositoryApiListAllRepositoriesOpts) ([]Repository, *http.Response, error) {
+func (a *RepositoryApiService) ListAllRepositories(localVarOptionals *RepositoryApiListAllRepositoriesOpts) ([]Repository, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -389,7 +389,7 @@ func (a *RepositoryApiService) ListAllRepositories(ctx context.Context, localVar
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -479,7 +479,7 @@ type RepositoryApiListRepositoriesOpts struct {
 	PageSize optional.Int64
 }
 
-func (a *RepositoryApiService) ListRepositories(ctx context.Context, projectName string, localVarOptionals *RepositoryApiListRepositoriesOpts) ([]Repository, *http.Response, error) {
+func (a *RepositoryApiService) ListRepositories(projectName string, localVarOptionals *RepositoryApiListRepositoriesOpts) ([]Repository, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -528,7 +528,7 @@ func (a *RepositoryApiService) ListRepositories(ctx context.Context, projectName
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -645,7 +645,7 @@ type RepositoryApiUpdateRepositoryOpts struct {
 	XRequestId optional.String
 }
 
-func (a *RepositoryApiService) UpdateRepository(ctx context.Context, projectName string, repositoryName string, repository Repository, localVarOptionals *RepositoryApiUpdateRepositoryOpts) (*http.Response, error) {
+func (a *RepositoryApiService) UpdateRepository(projectName string, repositoryName string, repository Repository, localVarOptionals *RepositoryApiUpdateRepositoryOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
@@ -685,7 +685,7 @@ func (a *RepositoryApiService) UpdateRepository(ctx context.Context, projectName
 	}
 	// body params
 	localVarPostBody = &repository
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}

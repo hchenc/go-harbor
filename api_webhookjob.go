@@ -55,7 +55,7 @@ type WebhookjobApiListWebhookJobsOpts struct {
 	Status optional.Interface
 }
 
-func (a *WebhookjobApiService) ListWebhookJobs(ctx context.Context, projectNameOrId string, policyId int64, localVarOptionals *WebhookjobApiListWebhookJobsOpts) ([]WebhookJob, *http.Response, error) {
+func (a *WebhookjobApiService) ListWebhookJobs(projectNameOrId string, policyId int64, localVarOptionals *WebhookjobApiListWebhookJobsOpts) ([]WebhookJob, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -111,7 +111,7 @@ func (a *WebhookjobApiService) ListWebhookJobs(ctx context.Context, projectNameO
 	if localVarOptionals != nil && localVarOptionals.XIsResourceName.IsSet() {
 		localVarHeaderParams["X-Is-Resource-Name"] = parameterToString(localVarOptionals.XIsResourceName.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}

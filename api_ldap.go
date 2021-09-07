@@ -41,7 +41,7 @@ type LdapApiImportLdapUserOpts struct {
 	XRequestId optional.String
 }
 
-func (a *LdapApiService) ImportLdapUser(ctx context.Context, uidList LdapImportUsers, localVarOptionals *LdapApiImportLdapUserOpts) (*http.Response, error) {
+func (a *LdapApiService) ImportLdapUser(uidList LdapImportUsers, localVarOptionals *LdapApiImportLdapUserOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
@@ -79,7 +79,7 @@ func (a *LdapApiService) ImportLdapUser(ctx context.Context, uidList LdapImportU
 	}
 	// body params
 	localVarPostBody = &uidList
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
@@ -179,7 +179,7 @@ type LdapApiPingLdapOpts struct {
 	Ldapconf optional.Interface
 }
 
-func (a *LdapApiService) PingLdap(ctx context.Context, localVarOptionals *LdapApiPingLdapOpts) (LdapPingResult, *http.Response, error) {
+func (a *LdapApiService) PingLdap(localVarOptionals *LdapApiPingLdapOpts) (LdapPingResult, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
@@ -224,7 +224,7 @@ func (a *LdapApiService) PingLdap(ctx context.Context, localVarOptionals *LdapAp
 		}
 		localVarPostBody = &localVarOptionalLdapconf
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -331,7 +331,7 @@ type LdapApiSearchLdapGroupOpts struct {
 	Groupdn optional.String
 }
 
-func (a *LdapApiService) SearchLdapGroup(ctx context.Context, localVarOptionals *LdapApiSearchLdapGroupOpts) ([]UserGroup, *http.Response, error) {
+func (a *LdapApiService) SearchLdapGroup(localVarOptionals *LdapApiSearchLdapGroupOpts) ([]UserGroup, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -373,7 +373,7 @@ func (a *LdapApiService) SearchLdapGroup(ctx context.Context, localVarOptionals 
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -478,7 +478,7 @@ type LdapApiSearchLdapUserOpts struct {
 	Username optional.String
 }
 
-func (a *LdapApiService) SearchLdapUser(ctx context.Context, localVarOptionals *LdapApiSearchLdapUserOpts) ([]LdapUser, *http.Response, error) {
+func (a *LdapApiService) SearchLdapUser(localVarOptionals *LdapApiSearchLdapUserOpts) ([]LdapUser, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -517,7 +517,7 @@ func (a *LdapApiService) SearchLdapUser(ctx context.Context, localVarOptionals *
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}

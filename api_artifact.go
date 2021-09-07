@@ -45,7 +45,7 @@ type ArtifactApiAddLabelOpts struct {
 	XRequestId optional.String
 }
 
-func (a *ArtifactApiService) AddLabel(ctx context.Context, projectName string, repositoryName string, reference string, label Label, localVarOptionals *ArtifactApiAddLabelOpts) (*http.Response, error) {
+func (a *ArtifactApiService) AddLabel(projectName string, repositoryName string, reference string, label Label, localVarOptionals *ArtifactApiAddLabelOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
@@ -86,7 +86,7 @@ func (a *ArtifactApiService) AddLabel(ctx context.Context, projectName string, r
 	}
 	// body params
 	localVarPostBody = &label
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
@@ -198,7 +198,7 @@ type ArtifactApiCopyArtifactOpts struct {
 	XRequestId optional.String
 }
 
-func (a *ArtifactApiService) CopyArtifact(ctx context.Context, projectName string, repositoryName string, from string, localVarOptionals *ArtifactApiCopyArtifactOpts) (*http.Response, error) {
+func (a *ArtifactApiService) CopyArtifact(projectName string, repositoryName string, from string, localVarOptionals *ArtifactApiCopyArtifactOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
@@ -237,7 +237,7 @@ func (a *ArtifactApiService) CopyArtifact(ctx context.Context, projectName strin
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
@@ -350,7 +350,7 @@ type ArtifactApiCreateTagOpts struct {
 	XRequestId optional.String
 }
 
-func (a *ArtifactApiService) CreateTag(ctx context.Context, projectName string, repositoryName string, reference string, tag Tag, localVarOptionals *ArtifactApiCreateTagOpts) (*http.Response, error) {
+func (a *ArtifactApiService) CreateTag(projectName string, repositoryName string, reference string, tag Tag, localVarOptionals *ArtifactApiCreateTagOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
@@ -391,7 +391,7 @@ func (a *ArtifactApiService) CreateTag(ctx context.Context, projectName string, 
 	}
 	// body params
 	localVarPostBody = &tag
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
@@ -514,7 +514,7 @@ type ArtifactApiDeleteArtifactOpts struct {
 	XRequestId optional.String
 }
 
-func (a *ArtifactApiService) DeleteArtifact(ctx context.Context, projectName string, repositoryName string, reference string, localVarOptionals *ArtifactApiDeleteArtifactOpts) (*http.Response, error) {
+func (a *ArtifactApiService) DeleteArtifact(projectName string, repositoryName string, reference string, localVarOptionals *ArtifactApiDeleteArtifactOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
 		localVarPostBody   interface{}
@@ -553,7 +553,7 @@ func (a *ArtifactApiService) DeleteArtifact(ctx context.Context, projectName str
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
@@ -644,7 +644,7 @@ type ArtifactApiDeleteTagOpts struct {
 	XRequestId optional.String
 }
 
-func (a *ArtifactApiService) DeleteTag(ctx context.Context, projectName string, repositoryName string, reference string, tagName string, localVarOptionals *ArtifactApiDeleteTagOpts) (*http.Response, error) {
+func (a *ArtifactApiService) DeleteTag(projectName string, repositoryName string, reference string, tagName string, localVarOptionals *ArtifactApiDeleteTagOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
 		localVarPostBody   interface{}
@@ -684,7 +684,7 @@ func (a *ArtifactApiService) DeleteTag(ctx context.Context, projectName string, 
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
@@ -775,7 +775,7 @@ type ArtifactApiGetAdditionOpts struct {
 	XRequestId optional.String
 }
 
-func (a *ArtifactApiService) GetAddition(ctx context.Context, projectName string, repositoryName string, reference string, addition string, localVarOptionals *ArtifactApiGetAdditionOpts) (string, *http.Response, error) {
+func (a *ArtifactApiService) GetAddition(projectName string, repositoryName string, reference string, addition string, localVarOptionals *ArtifactApiGetAdditionOpts) (string, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -815,7 +815,7 @@ func (a *ArtifactApiService) GetAddition(ctx context.Context, projectName string
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -948,7 +948,7 @@ type ArtifactApiGetArtifactOpts struct {
 	WithImmutableStatus optional.Bool
 }
 
-func (a *ArtifactApiService) GetArtifact(ctx context.Context, projectName string, repositoryName string, reference string, localVarOptionals *ArtifactApiGetArtifactOpts) (Artifact, *http.Response, error) {
+func (a *ArtifactApiService) GetArtifact(projectName string, repositoryName string, reference string, localVarOptionals *ArtifactApiGetArtifactOpts) (Artifact, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -1011,7 +1011,7 @@ func (a *ArtifactApiService) GetArtifact(ctx context.Context, projectName string
 	if localVarOptionals != nil && localVarOptionals.XAcceptVulnerabilities.IsSet() {
 		localVarHeaderParams["X-Accept-Vulnerabilities"] = parameterToString(localVarOptionals.XAcceptVulnerabilities.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -1130,7 +1130,7 @@ type ArtifactApiGetVulnerabilitiesAdditionOpts struct {
 	XAcceptVulnerabilities optional.String
 }
 
-func (a *ArtifactApiService) GetVulnerabilitiesAddition(ctx context.Context, projectName string, repositoryName string, reference string, localVarOptionals *ArtifactApiGetVulnerabilitiesAdditionOpts) (string, *http.Response, error) {
+func (a *ArtifactApiService) GetVulnerabilitiesAddition(projectName string, repositoryName string, reference string, localVarOptionals *ArtifactApiGetVulnerabilitiesAdditionOpts) (string, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -1172,7 +1172,7 @@ func (a *ArtifactApiService) GetVulnerabilitiesAddition(ctx context.Context, pro
 	if localVarOptionals != nil && localVarOptionals.XAcceptVulnerabilities.IsSet() {
 		localVarHeaderParams["X-Accept-Vulnerabilities"] = parameterToString(localVarOptionals.XAcceptVulnerabilities.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -1308,7 +1308,7 @@ type ArtifactApiListArtifactsOpts struct {
 	WithImmutableStatus optional.Bool
 }
 
-func (a *ArtifactApiService) ListArtifacts(ctx context.Context, projectName string, repositoryName string, localVarOptionals *ArtifactApiListArtifactsOpts) ([]Artifact, *http.Response, error) {
+func (a *ArtifactApiService) ListArtifacts(projectName string, repositoryName string, localVarOptionals *ArtifactApiListArtifactsOpts) ([]Artifact, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -1376,7 +1376,7 @@ func (a *ArtifactApiService) ListArtifacts(ctx context.Context, projectName stri
 	if localVarOptionals != nil && localVarOptionals.XAcceptVulnerabilities.IsSet() {
 		localVarHeaderParams["X-Accept-Vulnerabilities"] = parameterToString(localVarOptionals.XAcceptVulnerabilities.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -1505,7 +1505,7 @@ type ArtifactApiListTagsOpts struct {
 	WithImmutableStatus optional.Bool
 }
 
-func (a *ArtifactApiService) ListTags(ctx context.Context, projectName string, repositoryName string, reference string, localVarOptionals *ArtifactApiListTagsOpts) ([]Tag, *http.Response, error) {
+func (a *ArtifactApiService) ListTags(projectName string, repositoryName string, reference string, localVarOptionals *ArtifactApiListTagsOpts) ([]Tag, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -1562,7 +1562,7 @@ func (a *ArtifactApiService) ListTags(ctx context.Context, projectName string, r
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -1680,7 +1680,7 @@ type ArtifactApiRemoveLabelOpts struct {
 	XRequestId optional.String
 }
 
-func (a *ArtifactApiService) RemoveLabel(ctx context.Context, projectName string, repositoryName string, reference string, labelId int64, localVarOptionals *ArtifactApiRemoveLabelOpts) (*http.Response, error) {
+func (a *ArtifactApiService) RemoveLabel(projectName string, repositoryName string, reference string, labelId int64, localVarOptionals *ArtifactApiRemoveLabelOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
 		localVarPostBody   interface{}
@@ -1720,7 +1720,7 @@ func (a *ArtifactApiService) RemoveLabel(ctx context.Context, projectName string
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}

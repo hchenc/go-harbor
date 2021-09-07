@@ -42,7 +42,7 @@ type RegistryApiCreateRegistryOpts struct {
 	XRequestId optional.String
 }
 
-func (a *RegistryApiService) CreateRegistry(ctx context.Context, registry Registry, localVarOptionals *RegistryApiCreateRegistryOpts) (*http.Response, error) {
+func (a *RegistryApiService) CreateRegistry(registry Registry, localVarOptionals *RegistryApiCreateRegistryOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
@@ -80,7 +80,7 @@ func (a *RegistryApiService) CreateRegistry(ctx context.Context, registry Regist
 	}
 	// body params
 	localVarPostBody = &registry
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
@@ -179,7 +179,7 @@ type RegistryApiDeleteRegistryOpts struct {
 	XRequestId optional.String
 }
 
-func (a *RegistryApiService) DeleteRegistry(ctx context.Context, id int64, localVarOptionals *RegistryApiDeleteRegistryOpts) (*http.Response, error) {
+func (a *RegistryApiService) DeleteRegistry(id int64, localVarOptionals *RegistryApiDeleteRegistryOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
 		localVarPostBody   interface{}
@@ -216,7 +216,7 @@ func (a *RegistryApiService) DeleteRegistry(ctx context.Context, id int64, local
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
@@ -315,7 +315,7 @@ type RegistryApiGetRegistryOpts struct {
 	XRequestId optional.String
 }
 
-func (a *RegistryApiService) GetRegistry(ctx context.Context, id int64, localVarOptionals *RegistryApiGetRegistryOpts) (Registry, *http.Response, error) {
+func (a *RegistryApiService) GetRegistry(id int64, localVarOptionals *RegistryApiGetRegistryOpts) (Registry, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -352,7 +352,7 @@ func (a *RegistryApiService) GetRegistry(ctx context.Context, id int64, localVar
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -456,7 +456,7 @@ type RegistryApiGetRegistryInfoOpts struct {
 	XRequestId optional.String
 }
 
-func (a *RegistryApiService) GetRegistryInfo(ctx context.Context, id int64, localVarOptionals *RegistryApiGetRegistryInfoOpts) (RegistryInfo, *http.Response, error) {
+func (a *RegistryApiService) GetRegistryInfo(id int64, localVarOptionals *RegistryApiGetRegistryInfoOpts) (RegistryInfo, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -493,7 +493,7 @@ func (a *RegistryApiService) GetRegistryInfo(ctx context.Context, id int64, loca
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -606,7 +606,7 @@ type RegistryApiListRegistriesOpts struct {
 	Name optional.String
 }
 
-func (a *RegistryApiService) ListRegistries(ctx context.Context, localVarOptionals *RegistryApiListRegistriesOpts) ([]Registry, *http.Response, error) {
+func (a *RegistryApiService) ListRegistries(localVarOptionals *RegistryApiListRegistriesOpts) ([]Registry, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -657,7 +657,7 @@ func (a *RegistryApiService) ListRegistries(ctx context.Context, localVarOptiona
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -749,7 +749,7 @@ type RegistryApiListRegistryProviderInfosOpts struct {
 	XRequestId optional.String
 }
 
-func (a *RegistryApiService) ListRegistryProviderInfos(ctx context.Context, localVarOptionals *RegistryApiListRegistryProviderInfosOpts) (map[string]RegistryProviderInfo, *http.Response, error) {
+func (a *RegistryApiService) ListRegistryProviderInfos(localVarOptionals *RegistryApiListRegistryProviderInfosOpts) (map[string]RegistryProviderInfo, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -785,7 +785,7 @@ func (a *RegistryApiService) ListRegistryProviderInfos(ctx context.Context, loca
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -877,7 +877,7 @@ type RegistryApiListRegistryProviderTypesOpts struct {
 	XRequestId optional.String
 }
 
-func (a *RegistryApiService) ListRegistryProviderTypes(ctx context.Context, localVarOptionals *RegistryApiListRegistryProviderTypesOpts) ([]string, *http.Response, error) {
+func (a *RegistryApiService) ListRegistryProviderTypes(localVarOptionals *RegistryApiListRegistryProviderTypesOpts) ([]string, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -913,7 +913,7 @@ func (a *RegistryApiService) ListRegistryProviderTypes(ctx context.Context, loca
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -1006,7 +1006,7 @@ type RegistryApiPingRegistryOpts struct {
 	XRequestId optional.String
 }
 
-func (a *RegistryApiService) PingRegistry(ctx context.Context, registry RegistryPing, localVarOptionals *RegistryApiPingRegistryOpts) (*http.Response, error) {
+func (a *RegistryApiService) PingRegistry(registry RegistryPing, localVarOptionals *RegistryApiPingRegistryOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
@@ -1044,7 +1044,7 @@ func (a *RegistryApiService) PingRegistry(ctx context.Context, registry Registry
 	}
 	// body params
 	localVarPostBody = &registry
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
@@ -1144,7 +1144,7 @@ type RegistryApiUpdateRegistryOpts struct {
 	XRequestId optional.String
 }
 
-func (a *RegistryApiService) UpdateRegistry(ctx context.Context, id int64, registry RegistryUpdate, localVarOptionals *RegistryApiUpdateRegistryOpts) (*http.Response, error) {
+func (a *RegistryApiService) UpdateRegistry(id int64, registry RegistryUpdate, localVarOptionals *RegistryApiUpdateRegistryOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
@@ -1183,7 +1183,7 @@ func (a *RegistryApiService) UpdateRegistry(ctx context.Context, id int64, regis
 	}
 	// body params
 	localVarPostBody = &registry
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}

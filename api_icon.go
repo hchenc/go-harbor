@@ -42,7 +42,7 @@ type IconApiGetIconOpts struct {
 	XRequestId optional.String
 }
 
-func (a *IconApiService) GetIcon(ctx context.Context, digest string, localVarOptionals *IconApiGetIconOpts) (Icon, *http.Response, error) {
+func (a *IconApiService) GetIcon(digest string, localVarOptionals *IconApiGetIconOpts) (Icon, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -79,7 +79,7 @@ func (a *IconApiService) GetIcon(ctx context.Context, digest string, localVarOpt
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}

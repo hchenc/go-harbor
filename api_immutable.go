@@ -45,7 +45,7 @@ type ImmutableApiCreateImmuRuleOpts struct {
 	XIsResourceName optional.Bool
 }
 
-func (a *ImmutableApiService) CreateImmuRule(ctx context.Context, projectNameOrId string, immutableRule ImmutableRule, localVarOptionals *ImmutableApiCreateImmuRuleOpts) (*http.Response, error) {
+func (a *ImmutableApiService) CreateImmuRule(projectNameOrId string, immutableRule ImmutableRule, localVarOptionals *ImmutableApiCreateImmuRuleOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
@@ -87,7 +87,7 @@ func (a *ImmutableApiService) CreateImmuRule(ctx context.Context, projectNameOrI
 	}
 	// body params
 	localVarPostBody = &immutableRule
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
@@ -188,7 +188,7 @@ type ImmutableApiDeleteImmuRuleOpts struct {
 	XIsResourceName optional.Bool
 }
 
-func (a *ImmutableApiService) DeleteImmuRule(ctx context.Context, projectNameOrId string, immutableRuleId int64, localVarOptionals *ImmutableApiDeleteImmuRuleOpts) (*http.Response, error) {
+func (a *ImmutableApiService) DeleteImmuRule(projectNameOrId string, immutableRuleId int64, localVarOptionals *ImmutableApiDeleteImmuRuleOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
 		localVarPostBody   interface{}
@@ -229,7 +229,7 @@ func (a *ImmutableApiService) DeleteImmuRule(ctx context.Context, projectNameOrI
 	if localVarOptionals != nil && localVarOptionals.XIsResourceName.IsSet() {
 		localVarHeaderParams["X-Is-Resource-Name"] = parameterToString(localVarOptionals.XIsResourceName.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
@@ -327,7 +327,7 @@ type ImmutableApiListImmuRulesOpts struct {
 	Sort optional.String
 }
 
-func (a *ImmutableApiService) ListImmuRules(ctx context.Context, projectNameOrId string, localVarOptionals *ImmutableApiListImmuRulesOpts) ([]ImmutableRule, *http.Response, error) {
+func (a *ImmutableApiService) ListImmuRules(projectNameOrId string, localVarOptionals *ImmutableApiListImmuRulesOpts) ([]ImmutableRule, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -379,7 +379,7 @@ func (a *ImmutableApiService) ListImmuRules(ctx context.Context, projectNameOrId
 	if localVarOptionals != nil && localVarOptionals.XIsResourceName.IsSet() {
 		localVarHeaderParams["X-Is-Resource-Name"] = parameterToString(localVarOptionals.XIsResourceName.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -486,7 +486,7 @@ type ImmutableApiUpdateImmuRuleOpts struct {
 	XIsResourceName optional.Bool
 }
 
-func (a *ImmutableApiService) UpdateImmuRule(ctx context.Context, projectNameOrId string, immutableRuleId int64, immutableRule ImmutableRule, localVarOptionals *ImmutableApiUpdateImmuRuleOpts) (*http.Response, error) {
+func (a *ImmutableApiService) UpdateImmuRule(projectNameOrId string, immutableRuleId int64, immutableRule ImmutableRule, localVarOptionals *ImmutableApiUpdateImmuRuleOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
@@ -529,7 +529,7 @@ func (a *ImmutableApiService) UpdateImmuRule(ctx context.Context, projectNameOrI
 	}
 	// body params
 	localVarPostBody = &immutableRule
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}

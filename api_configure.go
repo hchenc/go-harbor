@@ -40,7 +40,7 @@ type ConfigureApiGetConfigurationsOpts struct {
 	XRequestId optional.String
 }
 
-func (a *ConfigureApiService) GetConfigurations(ctx context.Context, localVarOptionals *ConfigureApiGetConfigurationsOpts) (ConfigurationsResponse, *http.Response, error) {
+func (a *ConfigureApiService) GetConfigurations(localVarOptionals *ConfigureApiGetConfigurationsOpts) (ConfigurationsResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -76,7 +76,7 @@ func (a *ConfigureApiService) GetConfigurations(ctx context.Context, localVarOpt
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -135,7 +135,7 @@ type ConfigureApiGetInternalconfigOpts struct {
 	XRequestId optional.String
 }
 
-func (a *ConfigureApiService) GetInternalconfig(ctx context.Context, localVarOptionals *ConfigureApiGetInternalconfigOpts) (InternalConfigurationsResponse, *http.Response, error) {
+func (a *ConfigureApiService) GetInternalconfig(localVarOptionals *ConfigureApiGetInternalconfigOpts) (InternalConfigurationsResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -171,7 +171,7 @@ func (a *ConfigureApiService) GetInternalconfig(ctx context.Context, localVarOpt
 	if localVarOptionals != nil && localVarOptionals.XRequestId.IsSet() {
 		localVarHeaderParams["X-Request-Id"] = parameterToString(localVarOptionals.XRequestId.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -231,7 +231,7 @@ type ConfigureApiUpdateConfigurationsOpts struct {
 	XRequestId optional.String
 }
 
-func (a *ConfigureApiService) UpdateConfigurations(ctx context.Context, configurations Configurations, localVarOptionals *ConfigureApiUpdateConfigurationsOpts) (*http.Response, error) {
+func (a *ConfigureApiService) UpdateConfigurations(configurations Configurations, localVarOptionals *ConfigureApiUpdateConfigurationsOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
@@ -269,7 +269,7 @@ func (a *ConfigureApiService) UpdateConfigurations(ctx context.Context, configur
 	}
 	// body params
 	localVarPostBody = &configurations
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}

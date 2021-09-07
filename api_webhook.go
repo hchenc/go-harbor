@@ -45,7 +45,7 @@ type WebhookApiCreateWebhookPolicyOfProjectOpts struct {
 	XIsResourceName optional.Bool
 }
 
-func (a *WebhookApiService) CreateWebhookPolicyOfProject(ctx context.Context, projectNameOrId string, policy WebhookPolicy, localVarOptionals *WebhookApiCreateWebhookPolicyOfProjectOpts) (*http.Response, error) {
+func (a *WebhookApiService) CreateWebhookPolicyOfProject(projectNameOrId string, policy WebhookPolicy, localVarOptionals *WebhookApiCreateWebhookPolicyOfProjectOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
@@ -87,7 +87,7 @@ func (a *WebhookApiService) CreateWebhookPolicyOfProject(ctx context.Context, pr
 	}
 	// body params
 	localVarPostBody = &policy
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
@@ -178,7 +178,7 @@ type WebhookApiDeleteWebhookPolicyOfProjectOpts struct {
 	XIsResourceName optional.Bool
 }
 
-func (a *WebhookApiService) DeleteWebhookPolicyOfProject(ctx context.Context, projectNameOrId string, webhookPolicyId int64, localVarOptionals *WebhookApiDeleteWebhookPolicyOfProjectOpts) (*http.Response, error) {
+func (a *WebhookApiService) DeleteWebhookPolicyOfProject(projectNameOrId string, webhookPolicyId int64, localVarOptionals *WebhookApiDeleteWebhookPolicyOfProjectOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
 		localVarPostBody   interface{}
@@ -219,7 +219,7 @@ func (a *WebhookApiService) DeleteWebhookPolicyOfProject(ctx context.Context, pr
 	if localVarOptionals != nil && localVarOptionals.XIsResourceName.IsSet() {
 		localVarHeaderParams["X-Is-Resource-Name"] = parameterToString(localVarOptionals.XIsResourceName.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
@@ -320,7 +320,7 @@ type WebhookApiGetSupportedEventTypesOpts struct {
 	XIsResourceName optional.Bool
 }
 
-func (a *WebhookApiService) GetSupportedEventTypes(ctx context.Context, projectNameOrId string, localVarOptionals *WebhookApiGetSupportedEventTypesOpts) (SupportedWebhookEventTypes, *http.Response, error) {
+func (a *WebhookApiService) GetSupportedEventTypes(projectNameOrId string, localVarOptionals *WebhookApiGetSupportedEventTypesOpts) (SupportedWebhookEventTypes, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -360,7 +360,7 @@ func (a *WebhookApiService) GetSupportedEventTypes(ctx context.Context, projectN
 	if localVarOptionals != nil && localVarOptionals.XIsResourceName.IsSet() {
 		localVarHeaderParams["X-Is-Resource-Name"] = parameterToString(localVarOptionals.XIsResourceName.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -456,7 +456,7 @@ type WebhookApiGetWebhookPolicyOfProjectOpts struct {
 	XIsResourceName optional.Bool
 }
 
-func (a *WebhookApiService) GetWebhookPolicyOfProject(ctx context.Context, projectNameOrId string, webhookPolicyId int64, localVarOptionals *WebhookApiGetWebhookPolicyOfProjectOpts) (WebhookPolicy, *http.Response, error) {
+func (a *WebhookApiService) GetWebhookPolicyOfProject(projectNameOrId string, webhookPolicyId int64, localVarOptionals *WebhookApiGetWebhookPolicyOfProjectOpts) (WebhookPolicy, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -497,7 +497,7 @@ func (a *WebhookApiService) GetWebhookPolicyOfProject(ctx context.Context, proje
 	if localVarOptionals != nil && localVarOptionals.XIsResourceName.IsSet() {
 		localVarHeaderParams["X-Is-Resource-Name"] = parameterToString(localVarOptionals.XIsResourceName.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -614,7 +614,7 @@ type WebhookApiLastTriggerOpts struct {
 	XIsResourceName optional.Bool
 }
 
-func (a *WebhookApiService) LastTrigger(ctx context.Context, projectNameOrId string, localVarOptionals *WebhookApiLastTriggerOpts) ([]WebhookLastTrigger, *http.Response, error) {
+func (a *WebhookApiService) LastTrigger(projectNameOrId string, localVarOptionals *WebhookApiLastTriggerOpts) ([]WebhookLastTrigger, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -654,7 +654,7 @@ func (a *WebhookApiService) LastTrigger(ctx context.Context, projectNameOrId str
 	if localVarOptionals != nil && localVarOptionals.XIsResourceName.IsSet() {
 		localVarHeaderParams["X-Is-Resource-Name"] = parameterToString(localVarOptionals.XIsResourceName.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -768,7 +768,7 @@ type WebhookApiListWebhookPoliciesOfProjectOpts struct {
 	PageSize optional.Int64
 }
 
-func (a *WebhookApiService) ListWebhookPoliciesOfProject(ctx context.Context, projectNameOrId string, localVarOptionals *WebhookApiListWebhookPoliciesOfProjectOpts) ([]WebhookPolicy, *http.Response, error) {
+func (a *WebhookApiService) ListWebhookPoliciesOfProject(projectNameOrId string, localVarOptionals *WebhookApiListWebhookPoliciesOfProjectOpts) ([]WebhookPolicy, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -820,7 +820,7 @@ func (a *WebhookApiService) ListWebhookPoliciesOfProject(ctx context.Context, pr
 	if localVarOptionals != nil && localVarOptionals.XIsResourceName.IsSet() {
 		localVarHeaderParams["X-Is-Resource-Name"] = parameterToString(localVarOptionals.XIsResourceName.Value(), "")
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -928,7 +928,7 @@ type WebhookApiUpdateWebhookPolicyOfProjectOpts struct {
 	XIsResourceName optional.Bool
 }
 
-func (a *WebhookApiService) UpdateWebhookPolicyOfProject(ctx context.Context, projectNameOrId string, webhookPolicyId int64, policy WebhookPolicy, localVarOptionals *WebhookApiUpdateWebhookPolicyOfProjectOpts) (*http.Response, error) {
+func (a *WebhookApiService) UpdateWebhookPolicyOfProject(projectNameOrId string, webhookPolicyId int64, policy WebhookPolicy, localVarOptionals *WebhookApiUpdateWebhookPolicyOfProjectOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
@@ -971,7 +971,7 @@ func (a *WebhookApiService) UpdateWebhookPolicyOfProject(ctx context.Context, pr
 	}
 	// body params
 	localVarPostBody = &policy
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(a.client.cfg.Ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
