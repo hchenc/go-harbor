@@ -10,9 +10,9 @@
 package swagger
 
 type UserCreationReq struct {
-	Email string `json:"email,omitempty"`
+	Email    string `json:"email,omitempty"`
 	Realname string `json:"realname,omitempty"`
-	Comment string `json:"comment,omitempty"`
+	Comment  string `json:"comment,omitempty"`
 	Password string `json:"password,omitempty"`
 	Username string `json:"username,omitempty"`
 }

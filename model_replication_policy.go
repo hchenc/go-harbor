@@ -27,8 +27,8 @@ type ReplicationPolicy struct {
 	// The destination namespace.
 	DestNamespace string `json:"dest_namespace,omitempty"`
 	// Specify how many path components will be replaced by the provided destination namespace. The default value is -1 in which case the legacy mode will be applied.
-	DestNamespaceReplaceCount int32 `json:"dest_namespace_replace_count,omitempty"`
-	Trigger *ReplicationTrigger `json:"trigger,omitempty"`
+	DestNamespaceReplaceCount int32               `json:"dest_namespace_replace_count,omitempty"`
+	Trigger                   *ReplicationTrigger `json:"trigger,omitempty"`
 	// The replication policy filter array.
 	Filters []ReplicationFilter `json:"filters,omitempty"`
 	// Whether to replicate the deletion operation.

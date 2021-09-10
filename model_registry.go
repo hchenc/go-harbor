@@ -19,7 +19,7 @@ type Registry struct {
 	// The registry URL string.
 	Url string `json:"url,omitempty"`
 	// The registry name.
-	Name string `json:"name,omitempty"`
+	Name       string              `json:"name,omitempty"`
 	Credential *RegistryCredential `json:"credential,omitempty"`
 	// Type of the registry, e.g. 'harbor'.
 	Type_ string `json:"type,omitempty"`

@@ -19,7 +19,7 @@ type Task struct {
 	// The status message of task
 	StatusMessage string `json:"status_message,omitempty"`
 	// The count of task run
-	RunCount int32 `json:"run_count,omitempty"`
+	RunCount   int32       `json:"run_count,omitempty"`
 	ExtraAttrs *ExtraAttrs `json:"extra_attrs,omitempty"`
 	// The creation time of task
 	CreationTime string `json:"creation_time,omitempty"`

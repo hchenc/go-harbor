@@ -10,12 +10,12 @@
 package swagger
 
 type RetentionRule struct {
-	Id int32 `json:"id,omitempty"`
-	Priority int32 `json:"priority,omitempty"`
-	Disabled bool `json:"disabled,omitempty"`
-	Action string `json:"action,omitempty"`
-	Template string `json:"template,omitempty"`
-	Params map[string]interface{} `json:"params,omitempty"`
-	TagSelectors []RetentionSelector `json:"tag_selectors,omitempty"`
+	Id             int32                          `json:"id,omitempty"`
+	Priority       int32                          `json:"priority,omitempty"`
+	Disabled       bool                           `json:"disabled,omitempty"`
+	Action         string                         `json:"action,omitempty"`
+	Template       string                         `json:"template,omitempty"`
+	Params         map[string]interface{}         `json:"params,omitempty"`
+	TagSelectors   []RetentionSelector            `json:"tag_selectors,omitempty"`
 	ScopeSelectors map[string][]RetentionSelector `json:"scope_selectors,omitempty"`
 }

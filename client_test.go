@@ -18,5 +18,5 @@ func TestClient(t *testing.T) {
 	projects, resp, err := client.ProjectApi.ListProjects(&ProjectApiListProjectsOpts{})
 	users, resp, err := client.UserApi.ListUsers(&UserApiListUsersOpts{})
 	defer resp.Body.Close()
-	fmt.Println(projects,users, resp, err)
+	fmt.Println(projects, users, resp, err)
 }

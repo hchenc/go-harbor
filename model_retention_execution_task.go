@@ -10,15 +10,15 @@
 package swagger
 
 type RetentionExecutionTask struct {
-	Id int64 `json:"id,omitempty"`
-	ExecutionId int64 `json:"execution_id,omitempty"`
-	Repository string `json:"repository,omitempty"`
-	JobId string `json:"job_id,omitempty"`
-	Status string `json:"status,omitempty"`
-	StatusCode int32 `json:"status_code,omitempty"`
-	StatusRevision int64 `json:"status_revision,omitempty"`
-	StartTime string `json:"start_time,omitempty"`
-	EndTime string `json:"end_time,omitempty"`
-	Total int32 `json:"total,omitempty"`
-	Retained int32 `json:"retained,omitempty"`
+	Id             int64  `json:"id,omitempty"`
+	ExecutionId    int64  `json:"execution_id,omitempty"`
+	Repository     string `json:"repository,omitempty"`
+	JobId          string `json:"job_id,omitempty"`
+	Status         string `json:"status,omitempty"`
+	StatusCode     int32  `json:"status_code,omitempty"`
+	StatusRevision int64  `json:"status_revision,omitempty"`
+	StartTime      string `json:"start_time,omitempty"`
+	EndTime        string `json:"end_time,omitempty"`
+	Total          int32  `json:"total,omitempty"`
+	Retained       int32  `json:"retained,omitempty"`
 }

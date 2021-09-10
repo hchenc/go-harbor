@@ -11,7 +11,7 @@ package swagger
 
 type ProjectMember struct {
 	// The role id 1 for projectAdmin, 2 for developer, 3 for guest, 4 for maintainer
-	RoleId int32 `json:"role_id,omitempty"`
-	MemberUser *UserEntity `json:"member_user,omitempty"`
-	MemberGroup *UserGroup `json:"member_group,omitempty"`
+	RoleId      int32       `json:"role_id,omitempty"`
+	MemberUser  *UserEntity `json:"member_user,omitempty"`
+	MemberGroup *UserGroup  `json:"member_group,omitempty"`
 }

@@ -11,7 +11,7 @@ package swagger
 
 // retention selector
 type RetentionSelectorMetadata struct {
-	DisplayText string `json:"display_text,omitempty"`
-	Kind string `json:"kind,omitempty"`
+	DisplayText string   `json:"display_text,omitempty"`
+	Kind        string   `json:"kind,omitempty"`
 	Decorations []string `json:"decorations,omitempty"`
 }

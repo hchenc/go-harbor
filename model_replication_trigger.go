@@ -11,6 +11,6 @@ package swagger
 
 type ReplicationTrigger struct {
 	// The replication policy trigger type. The valid values are manual, event_based and scheduled.
-	Type_ string `json:"type,omitempty"`
+	Type_           string                      `json:"type,omitempty"`
 	TriggerSettings *ReplicationTriggerSettings `json:"trigger_settings,omitempty"`
 }

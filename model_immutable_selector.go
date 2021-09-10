@@ -10,8 +10,8 @@
 package swagger
 
 type ImmutableSelector struct {
-	Kind string `json:"kind,omitempty"`
+	Kind       string `json:"kind,omitempty"`
 	Decoration string `json:"decoration,omitempty"`
-	Pattern string `json:"pattern,omitempty"`
-	Extras string `json:"extras,omitempty"`
+	Pattern    string `json:"pattern,omitempty"`
+	Extras     string `json:"extras,omitempty"`
 }

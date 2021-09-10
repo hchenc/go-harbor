@@ -10,7 +10,7 @@
 package swagger
 
 type ScheduleObj struct {
-	// The schedule type. The valid values are 'Hourly', 'Daily', 'Weekly', 'Custom', 'Manual' and 'None'. 'Manual' means to trigger it right away and 'None' means to cancel the schedule. 
+	// The schedule type. The valid values are 'Hourly', 'Daily', 'Weekly', 'Custom', 'Manual' and 'None'. 'Manual' means to trigger it right away and 'None' means to cancel the schedule.
 	Type_ string `json:"type,omitempty"`
 	// A cron expression, a time-based job scheduler.
 	Cron string `json:"cron,omitempty"`

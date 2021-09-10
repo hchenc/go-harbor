@@ -31,7 +31,7 @@ type Robot struct {
 	// The disable status of the robot
 	Disable bool `json:"disable,omitempty"`
 	// The expiration data of the robot
-	ExpiresAt int64 `json:"expires_at,omitempty"`
+	ExpiresAt   int64             `json:"expires_at,omitempty"`
 	Permissions []RobotPermission `json:"permissions,omitempty"`
 	// The creation time of the robot.
 	CreationTime time.Time `json:"creation_time,omitempty"`

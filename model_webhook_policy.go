@@ -22,9 +22,9 @@ type WebhookPolicy struct {
 	// The description of webhook policy.
 	Description string `json:"description,omitempty"`
 	// The project ID of webhook policy.
-	ProjectId int32 `json:"project_id,omitempty"`
-	Targets []WebhookTargetObject `json:"targets,omitempty"`
-	EventTypes []string `json:"event_types,omitempty"`
+	ProjectId  int32                 `json:"project_id,omitempty"`
+	Targets    []WebhookTargetObject `json:"targets,omitempty"`
+	EventTypes []string              `json:"event_types,omitempty"`
 	// The creator of the webhook policy.
 	Creator string `json:"creator,omitempty"`
 	// The create time of the webhook policy.

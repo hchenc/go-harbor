@@ -10,7 +10,7 @@
 package swagger
 
 type RetentionRuleTrigger struct {
-	Kind string `json:"kind,omitempty"`
-	Settings interface{} `json:"settings,omitempty"`
+	Kind       string      `json:"kind,omitempty"`
+	Settings   interface{} `json:"settings,omitempty"`
 	References interface{} `json:"references,omitempty"`
 }

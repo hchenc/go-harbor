@@ -11,6 +11,6 @@ package swagger
 
 // Supportted webhook event types and notify types.
 type SupportedWebhookEventTypes struct {
-	EventType []EventType `json:"event_type,omitempty"`
+	EventType  []EventType  `json:"event_type,omitempty"`
 	NotifyType []NotifyType `json:"notify_type,omitempty"`
 }

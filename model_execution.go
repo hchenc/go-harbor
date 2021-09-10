@@ -19,10 +19,10 @@ type Execution struct {
 	// The status of execution
 	Status string `json:"status,omitempty"`
 	// The status message of execution
-	StatusMessage string `json:"status_message,omitempty"`
-	Metrics *Metrics `json:"metrics,omitempty"`
+	StatusMessage string   `json:"status_message,omitempty"`
+	Metrics       *Metrics `json:"metrics,omitempty"`
 	// The trigger of execution
-	Trigger string `json:"trigger,omitempty"`
+	Trigger    string      `json:"trigger,omitempty"`
 	ExtraAttrs *ExtraAttrs `json:"extra_attrs,omitempty"`
 	// The start time of execution
 	StartTime string `json:"start_time,omitempty"`

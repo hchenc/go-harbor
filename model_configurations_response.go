@@ -114,5 +114,5 @@ type ConfigurationsResponse struct {
 	QuotaPerProjectEnable *BoolConfigItem `json:"quota_per_project_enable,omitempty"`
 	// The storage quota per project
 	StoragePerProject *IntegerConfigItem `json:"storage_per_project,omitempty"`
-	ScanAllPolicy interface{} `json:"scan_all_policy,omitempty"`
+	ScanAllPolicy     interface{}        `json:"scan_all_policy,omitempty"`
 }

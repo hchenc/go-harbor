@@ -13,7 +13,7 @@ import (
 	"time"
 )
 
-// Registration represents a named configuration for invoking a scanner via its adapter. 
+// Registration represents a named configuration for invoking a scanner via its adapter.
 type ScannerRegistration struct {
 	// The unique identifier of this registration.
 	Uuid string `json:"uuid,omitempty"`
@@ -27,9 +27,9 @@ type ScannerRegistration struct {
 	Disabled bool `json:"disabled,omitempty"`
 	// Indicate if the registration is set as the system default one
 	IsDefault bool `json:"is_default,omitempty"`
-	// Specify what authentication approach is adopted for the HTTP communications. Supported types Basic\", \"Bearer\" and api key header \"X-ScannerAdapter-API-Key\" 
+	// Specify what authentication approach is adopted for the HTTP communications. Supported types Basic\", \"Bearer\" and api key header \"X-ScannerAdapter-API-Key\"
 	Auth string `json:"auth,omitempty"`
-	// An optional value of the HTTP Authorization header sent with each request to the Scanner Adapter API. 
+	// An optional value of the HTTP Authorization header sent with each request to the Scanner Adapter API.
 	AccessCredential string `json:"access_credential,omitempty"`
 	// Indicate if skip the certificate verification when sending HTTP requests
 	SkipCertVerify bool `json:"skip_certVerify,omitempty"`

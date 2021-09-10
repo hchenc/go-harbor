@@ -21,8 +21,8 @@ type GcHistory struct {
 	// the job kind of gc job.
 	JobKind string `json:"job_kind,omitempty"`
 	// the job parameters of gc job.
-	JobParameters string `json:"job_parameters,omitempty"`
-	Schedule *ScheduleObj `json:"schedule,omitempty"`
+	JobParameters string       `json:"job_parameters,omitempty"`
+	Schedule      *ScheduleObj `json:"schedule,omitempty"`
 	// the status of gc job.
 	JobStatus string `json:"job_status,omitempty"`
 	// if gc job was deleted.

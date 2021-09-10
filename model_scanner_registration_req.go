@@ -16,9 +16,9 @@ type ScannerRegistrationReq struct {
 	Description string `json:"description,omitempty"`
 	// A base URL of the scanner adapter.
 	Url string `json:"url"`
-	// Specify what authentication approach is adopted for the HTTP communications. Supported types Basic\", \"Bearer\" and api key header \"X-ScannerAdapter-API-Key\" 
+	// Specify what authentication approach is adopted for the HTTP communications. Supported types Basic\", \"Bearer\" and api key header \"X-ScannerAdapter-API-Key\"
 	Auth string `json:"auth,omitempty"`
-	// An optional value of the HTTP Authorization header sent with each request to the Scanner Adapter API. 
+	// An optional value of the HTTP Authorization header sent with each request to the Scanner Adapter API.
 	AccessCredential string `json:"access_credential,omitempty"`
 	// Indicate if skip the certificate verification when sending HTTP requests
 	SkipCertVerify bool `json:"skip_certVerify,omitempty"`

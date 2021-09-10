@@ -10,8 +10,8 @@
 package swagger
 
 type ProviderUnderProject struct {
-	Id int32 `json:"id,omitempty"`
+	Id       int32  `json:"id,omitempty"`
 	Provider string `json:"provider,omitempty"`
-	Enabled bool `json:"enabled,omitempty"`
-	Default_ bool `json:"default,omitempty"`
+	Enabled  bool   `json:"enabled,omitempty"`
+	Default_ bool   `json:"default,omitempty"`
 }

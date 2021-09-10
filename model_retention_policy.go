@@ -11,9 +11,9 @@ package swagger
 
 // retention policy
 type RetentionPolicy struct {
-	Id int64 `json:"id,omitempty"`
-	Algorithm string `json:"algorithm,omitempty"`
-	Rules []RetentionRule `json:"rules,omitempty"`
-	Trigger *RetentionRuleTrigger `json:"trigger,omitempty"`
-	Scope *RetentionPolicyScope `json:"scope,omitempty"`
+	Id        int64                 `json:"id,omitempty"`
+	Algorithm string                `json:"algorithm,omitempty"`
+	Rules     []RetentionRule       `json:"rules,omitempty"`
+	Trigger   *RetentionRuleTrigger `json:"trigger,omitempty"`
+	Scope     *RetentionPolicyScope `json:"scope,omitempty"`
 }

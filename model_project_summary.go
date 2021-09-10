@@ -23,7 +23,7 @@ type ProjectSummary struct {
 	// The total number of guest members.
 	GuestCount int32 `json:"guest_count,omitempty"`
 	// The total number of limited guest members.
-	LimitedGuestCount int32 `json:"limited_guest_count,omitempty"`
-	Quota *ProjectSummaryQuota `json:"quota,omitempty"`
-	Registry *Registry `json:"registry,omitempty"`
+	LimitedGuestCount int32                `json:"limited_guest_count,omitempty"`
+	Quota             *ProjectSummaryQuota `json:"quota,omitempty"`
+	Registry          *Registry            `json:"registry,omitempty"`
 }

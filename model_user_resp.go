@@ -14,15 +14,15 @@ import (
 )
 
 type UserResp struct {
-	Email string `json:"email,omitempty"`
-	Realname string `json:"realname,omitempty"`
-	Comment string `json:"comment,omitempty"`
-	UserId int32 `json:"user_id,omitempty"`
-	Username string `json:"username,omitempty"`
-	SysadminFlag bool `json:"sysadmin_flag,omitempty"`
+	Email        string `json:"email,omitempty"`
+	Realname     string `json:"realname,omitempty"`
+	Comment      string `json:"comment,omitempty"`
+	UserId       int32  `json:"user_id,omitempty"`
+	Username     string `json:"username,omitempty"`
+	SysadminFlag bool   `json:"sysadmin_flag,omitempty"`
 	// indicate the admin privilege is grant by authenticator (LDAP), is always false unless it is the current login user
-	AdminRoleInAuth bool `json:"admin_role_in_auth,omitempty"`
-	OidcUserMeta *OidcUserInfo `json:"oidc_user_meta,omitempty"`
+	AdminRoleInAuth bool          `json:"admin_role_in_auth,omitempty"`
+	OidcUserMeta    *OidcUserInfo `json:"oidc_user_meta,omitempty"`
 	// The creation time of the user.
 	CreationTime time.Time `json:"creation_time,omitempty"`
 	// The update time of the user.

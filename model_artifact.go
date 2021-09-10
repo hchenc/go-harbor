@@ -35,13 +35,13 @@ type Artifact struct {
 	// The push time of the artifact
 	PushTime time.Time `json:"push_time,omitempty"`
 	// The latest pull time of the artifact
-	PullTime time.Time `json:"pull_time,omitempty"`
-	ExtraAttrs *ExtraAttrs `json:"extra_attrs,omitempty"`
-	Annotations *Annotations `json:"annotations,omitempty"`
-	References []Reference `json:"references,omitempty"`
-	Tags []Tag `json:"tags,omitempty"`
+	PullTime      time.Time      `json:"pull_time,omitempty"`
+	ExtraAttrs    *ExtraAttrs    `json:"extra_attrs,omitempty"`
+	Annotations   *Annotations   `json:"annotations,omitempty"`
+	References    []Reference    `json:"references,omitempty"`
+	Tags          []Tag          `json:"tags,omitempty"`
 	AdditionLinks *AdditionLinks `json:"addition_links,omitempty"`
-	Labels []Label `json:"labels,omitempty"`
+	Labels        []Label        `json:"labels,omitempty"`
 	// The overview of the scan result.
 	ScanOverview *ScanOverview `json:"scan_overview,omitempty"`
 }

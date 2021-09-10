@@ -21,8 +21,8 @@ type Schedule struct {
 	// the creation time of the schedule.
 	CreationTime time.Time `json:"creation_time,omitempty"`
 	// the update time of the schedule.
-	UpdateTime time.Time `json:"update_time,omitempty"`
-	Schedule *ScheduleObj `json:"schedule,omitempty"`
+	UpdateTime time.Time    `json:"update_time,omitempty"`
+	Schedule   *ScheduleObj `json:"schedule,omitempty"`
 	// The parameters of schedule job
 	Parameters map[string]interface{} `json:"parameters,omitempty"`
 }

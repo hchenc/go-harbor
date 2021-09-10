@@ -11,7 +11,7 @@ package swagger
 
 // rule param
 type RetentionRuleParamMetadata struct {
-	Type_ string `json:"type,omitempty"`
-	Unit string `json:"unit,omitempty"`
-	Required bool `json:"required,omitempty"`
+	Type_    string `json:"type,omitempty"`
+	Unit     string `json:"unit,omitempty"`
+	Required bool   `json:"required,omitempty"`
 }

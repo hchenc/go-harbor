@@ -20,8 +20,8 @@ type CveAllowlist struct {
 	// ID of the project which the allowlist belongs to.  For system level allowlist this attribute is zero.
 	ProjectId int32 `json:"project_id,omitempty"`
 	// the time for expiration of the allowlist, in the form of seconds since epoch.  This is an optional attribute, if it's not set the CVE allowlist does not expire.
-	ExpiresAt int32 `json:"expires_at,omitempty"`
-	Items []CveAllowlistItem `json:"items,omitempty"`
+	ExpiresAt int32              `json:"expires_at,omitempty"`
+	Items     []CveAllowlistItem `json:"items,omitempty"`
 	// The creation time of the allowlist.
 	CreationTime time.Time `json:"creation_time,omitempty"`
 	// The update time of the allowlist.

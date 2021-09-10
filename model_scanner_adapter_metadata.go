@@ -11,7 +11,7 @@ package swagger
 
 // The metadata info of the scanner adapter
 type ScannerAdapterMetadata struct {
-	Scanner *Scanner `json:"scanner,omitempty"`
+	Scanner      *Scanner            `json:"scanner,omitempty"`
 	Capabilities []ScannerCapability `json:"capabilities,omitempty"`
-	Properties map[string]string `json:"properties,omitempty"`
+	Properties   map[string]string   `json:"properties,omitempty"`
 }

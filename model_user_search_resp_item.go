@@ -11,6 +11,6 @@ package swagger
 
 type UserSearchRespItem struct {
 	// The ID of the user.
-	UserId int32 `json:"user_id,omitempty"`
+	UserId   int32  `json:"user_id,omitempty"`
 	Username string `json:"username,omitempty"`
 }

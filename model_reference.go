@@ -15,8 +15,8 @@ type Reference struct {
 	// The child ID of the reference
 	ChildId int64 `json:"child_id,omitempty"`
 	// The digest of the child artifact
-	ChildDigest string `json:"child_digest,omitempty"`
-	Platform *Platform `json:"platform,omitempty"`
+	ChildDigest string       `json:"child_digest,omitempty"`
+	Platform    *Platform    `json:"platform,omitempty"`
 	Annotations *Annotations `json:"annotations,omitempty"`
 	// The download URLs
 	Urls []string `json:"urls,omitempty"`

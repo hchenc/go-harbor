@@ -1,4 +1,3 @@
-
 /*
  * Harbor API
  *
@@ -12,11 +11,11 @@ package swagger
 
 import (
 	"context"
+	"github.com/antihax/optional"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-	"github.com/antihax/optional"
 )
 
 // Linger please
@@ -28,7 +27,7 @@ type ConfigureApiService service
 
 /*
 ConfigureApiService Get system configurations.
-This endpoint is for retrieving system configurations that only provides for admin user. 
+This endpoint is for retrieving system configurations that only provides for admin user.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *ConfigureApiGetConfigurationsOpts - Optional Parameters:
      * @param "XRequestId" (optional.String) -  An unique ID for the request
@@ -36,16 +35,16 @@ This endpoint is for retrieving system configurations that only provides for adm
 @return ConfigurationsResponse
 */
 
-type ConfigureApiGetConfigurationsOpts struct { 
+type ConfigureApiGetConfigurationsOpts struct {
 	XRequestId optional.String
 }
 
 func (a *ConfigureApiService) GetConfigurations(localVarOptionals *ConfigureApiGetConfigurationsOpts) (ConfigurationsResponse, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Get")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ConfigurationsResponse
 	)
 
@@ -94,27 +93,28 @@ func (a *ConfigureApiService) GetConfigurations(localVarOptionals *ConfigureApiG
 
 	if localVarHttpResponse.StatusCode < 300 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body: localVarBody,
-			error: localVarHttpResponse.Status,
+		newErr := GenericHarborError{
+			body:       localVarBody,
+			error:      localVarHttpResponse.Status,
+			statusCode: localVarHttpResponse.StatusCode,
 		}
-		
+
 		if localVarHttpResponse.StatusCode == 200 {
 			var v ConfigurationsResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
+
 		return localVarReturnValue, localVarHttpResponse, newErr
 	}
 
@@ -123,7 +123,7 @@ func (a *ConfigureApiService) GetConfigurations(localVarOptionals *ConfigureApiG
 
 /*
 ConfigureApiService Get internal configurations.
-This endpoint is for retrieving system configurations that only provides for internal api call. 
+This endpoint is for retrieving system configurations that only provides for internal api call.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *ConfigureApiGetInternalconfigOpts - Optional Parameters:
      * @param "XRequestId" (optional.String) -  An unique ID for the request
@@ -131,16 +131,16 @@ This endpoint is for retrieving system configurations that only provides for int
 @return InternalConfigurationsResponse
 */
 
-type ConfigureApiGetInternalconfigOpts struct { 
+type ConfigureApiGetInternalconfigOpts struct {
 	XRequestId optional.String
 }
 
 func (a *ConfigureApiService) GetInternalconfig(localVarOptionals *ConfigureApiGetInternalconfigOpts) (InternalConfigurationsResponse, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Get")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue InternalConfigurationsResponse
 	)
 
@@ -189,27 +189,28 @@ func (a *ConfigureApiService) GetInternalconfig(localVarOptionals *ConfigureApiG
 
 	if localVarHttpResponse.StatusCode < 300 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body: localVarBody,
-			error: localVarHttpResponse.Status,
+		newErr := GenericHarborError{
+			body:       localVarBody,
+			error:      localVarHttpResponse.Status,
+			statusCode: localVarHttpResponse.StatusCode,
 		}
-		
+
 		if localVarHttpResponse.StatusCode == 200 {
 			var v InternalConfigurationsResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
 		}
-		
+
 		return localVarReturnValue, localVarHttpResponse, newErr
 	}
 
@@ -218,7 +219,7 @@ func (a *ConfigureApiService) GetInternalconfig(localVarOptionals *ConfigureApiG
 
 /*
 ConfigureApiService Modify system configurations.
-This endpoint is for modifying system configurations that only provides for admin user. 
+This endpoint is for modifying system configurations that only provides for admin user.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param configurations The configuration map can contain a subset of the attributes of the schema, which are to be updated.
  * @param optional nil or *ConfigureApiUpdateConfigurationsOpts - Optional Parameters:
@@ -227,7 +228,7 @@ This endpoint is for modifying system configurations that only provides for admi
 
 */
 
-type ConfigureApiUpdateConfigurationsOpts struct { 
+type ConfigureApiUpdateConfigurationsOpts struct {
 	XRequestId optional.String
 }
 
@@ -237,7 +238,6 @@ func (a *ConfigureApiService) UpdateConfigurations(configurations Configurations
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		
 	)
 
 	// create path and map variables
@@ -285,16 +285,15 @@ func (a *ConfigureApiService) UpdateConfigurations(configurations Configurations
 		return localVarHttpResponse, err
 	}
 
-
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body: localVarBody,
-			error: localVarHttpResponse.Status,
+		newErr := GenericHarborError{
+			body:       localVarBody,
+			error:      localVarHttpResponse.Status,
+			statusCode: localVarHttpResponse.StatusCode,
 		}
-		
+
 		return localVarHttpResponse, newErr
 	}
 
 	return localVarHttpResponse, nil
 }
-

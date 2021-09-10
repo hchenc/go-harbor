@@ -14,6 +14,6 @@ type SearchResult struct {
 	// The chart name with repo name
 	Name string `json:"Name,omitempty"`
 	// The matched level
-	Score int32 `json:"Score,omitempty"`
+	Score int32         `json:"Score,omitempty"`
 	Chart *ChartVersion `json:"Chart,omitempty"`
 }

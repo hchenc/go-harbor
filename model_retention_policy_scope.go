@@ -11,5 +11,5 @@ package swagger
 
 type RetentionPolicyScope struct {
 	Level string `json:"level,omitempty"`
-	Ref int32 `json:"ref,omitempty"`
+	Ref   int32  `json:"ref,omitempty"`
 }

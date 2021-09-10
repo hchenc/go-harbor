@@ -12,6 +12,6 @@ package swagger
 // The system health status
 type OverallHealthStatus struct {
 	// The overall health status. It is \"healthy\" only when all the components' status are \"healthy\"
-	Status string `json:"status,omitempty"`
+	Status     string                  `json:"status,omitempty"`
 	Components []ComponentHealthStatus `json:"components,omitempty"`
 }

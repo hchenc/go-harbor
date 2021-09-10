@@ -10,11 +10,11 @@
 package swagger
 
 type RetentionExecution struct {
-	Id int64 `json:"id,omitempty"`
-	PolicyId int64 `json:"policy_id,omitempty"`
+	Id        int64  `json:"id,omitempty"`
+	PolicyId  int64  `json:"policy_id,omitempty"`
 	StartTime string `json:"start_time,omitempty"`
-	EndTime string `json:"end_time,omitempty"`
-	Status string `json:"status,omitempty"`
-	Trigger string `json:"trigger,omitempty"`
-	DryRun bool `json:"dry_run,omitempty"`
+	EndTime   string `json:"end_time,omitempty"`
+	Status    string `json:"status,omitempty"`
+	Trigger   string `json:"trigger,omitempty"`
+	DryRun    bool   `json:"dry_run,omitempty"`
 }
